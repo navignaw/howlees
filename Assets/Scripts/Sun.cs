@@ -22,8 +22,7 @@ public class Sun : MonoBehaviour {
 	{
 		this.transform.eulerAngles = new Vector3 (0,180,time);
 		sunColor = ColorMap(time);
-		spriteRenderer.color = sunColor;
-		//print(sunColor);
+//		spriteRenderer.color = sunColor;
 	}
 
 	Color ColorMap (float value)
