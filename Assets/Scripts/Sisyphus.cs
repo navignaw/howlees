@@ -65,8 +65,8 @@ public class Sisyphus : MonoBehaviour {
 
         // Check boulder distance
         if (boulder.transform.position.z < transform.position.z - loseDistance) {
-            // TODO: LOSE
             Debug.Log("YOU LOSE");
+			GameState.TurnNight();
             SetPlayable(false);
         } else {
             GameState.bestDistance = Mathf.Max(GameState.bestDistance, boulder.transform.position.z);
