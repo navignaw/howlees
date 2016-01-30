@@ -16,7 +16,15 @@ public class ValueText : MonoBehaviour {
     private Text text;
 
     // set the text to appropriate value
-    void Start() {
+    void Awake() {
+        text = GetComponent<Text>();
+    }
+
+    void OnEnable() {
+        SetText();
+    }
+
+    void SetText() {
         string value;
         switch (type) {
             case TextType.DAY:
@@ -24,7 +32,7 @@ public class ValueText : MonoBehaviour {
                 break;
 
             case TextType.BEST_DISTANCE:
-                value = GameState.bestDistance.ToString();
+                value = Mathf.Ceil(GameState.bestDistance).ToString();
                 break;
 
             case TextType.KARMA:
@@ -36,7 +44,6 @@ public class ValueText : MonoBehaviour {
                 break;
         };
 
-        text = GetComponent<Text>();
         text.text = prefix + value + suffix;
     }
 
