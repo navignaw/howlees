@@ -26,7 +26,7 @@ public class GameState : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		TurnIntro();
+		TurnDay();
 	}
 
 	// Update is called once per frame
@@ -96,5 +96,6 @@ public class GameState : MonoBehaviour {
 		upgradeScreen.SetActive(false);
 		pauseScreen.SetActive(false);
 		startScreen.SetActive(false);
+		gameScreen.SetActive(false);
 	}
 }

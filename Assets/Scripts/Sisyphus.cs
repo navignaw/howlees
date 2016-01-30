@@ -4,7 +4,9 @@ using System.Collections;
 public class Sisyphus : MonoBehaviour {
     public Rigidbody boulder;
     public float hillSlope;
-    public float strength;
+    public float maxStrength;
+    public float energy;
+    public float energyRate = 0.5f;
 
     const float loseDistance = 1f;
 
@@ -38,13 +40,16 @@ public class Sisyphus : MonoBehaviour {
         // holding mouse button
         if (Input.GetMouseButton(0)) {
             Vector3 mouseOffset = Input.mousePosition - mouseStart;
-            Vector3 mouseForce = new Vector3(strength * mouseOffset.x / Screen.width, strength * mouseOffset.y / Screen.height, 0f);
+            Vector3 mouseForce = new Vector3(energy * mouseOffset.x / Screen.width, energy * mouseOffset.y / Screen.height, 0f);
             Vector3 pushForce = Vector3.Project(mouseForce, hillDirection);
             rb.velocity = pushForce;
 
             pushForce.x = -mouseForce.x;
             pushForce *= 20f;
             boulder.AddForce(pushForce);
+
+            // lose energy while pushing
+            energy = Mathf.Max(0f, energy - energyRate * Time.deltaTime);
         }
 
         if (Input.GetMouseButtonUp(0)) {
@@ -66,6 +71,7 @@ public class Sisyphus : MonoBehaviour {
         if (playable) {
             rb.WakeUp();
             boulder.WakeUp();
+            energy = maxStrength;
         }
     }
 

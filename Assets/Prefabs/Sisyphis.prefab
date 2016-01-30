@@ -133,14 +133,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boulder: {fileID: 0}
   hillSlope: 10
-  strength: 10
+  maxStrength: 10
+  energy: 0
+  energyRate: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: maxStrength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: energyRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 144746}
