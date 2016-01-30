@@ -32,6 +32,8 @@ public class GameState : MonoBehaviour {
 	public GameObject nightScreen;
 	public GameObject startScreen;
 	public GameObject gameScreen;
+	public Texture2D defaultCursor;
+	public Texture2D pushCursor;
 
 	static State curGameState = State.START;
 	//Boulder boulder;
@@ -40,6 +42,7 @@ public class GameState : MonoBehaviour {
 	void Start () {
 		gameState = this;
 		NextDay();
+		Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 	}
 
 	// Update is called once per frame
@@ -59,6 +62,12 @@ public class GameState : MonoBehaviour {
 			case State.DAY:
 			{
 				time += timeScale * Time.deltaTime;
+				if (Input.GetMouseButtonDown(0))
+					Cursor.SetCursor(pushCursor, Vector2.zero, CursorMode.Auto);
+				else if (Input.GetMouseButtonUp(0))
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+
+
 				if (time >= night) TurnNight();
 			}
 				break;
