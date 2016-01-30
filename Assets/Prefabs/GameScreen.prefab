@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeight: 500
-  maxDepth: 10
-  boulder: {fileID: 0}
+  maxDepth: 150
+  ground: {fileID: 0}
   boulderTransform: {fileID: 22414152}
   highestTransform: {fileID: 22450640}
 --- !u!114 &11419654
@@ -511,7 +511,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: maxHeight
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxDepth
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 113624}

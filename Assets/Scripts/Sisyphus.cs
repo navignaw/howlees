@@ -21,6 +21,7 @@ public class Sisyphus : MonoBehaviour {
     private Vector3 mouseStart;
     private Vector3 startPos;
     private Vector3 boulderStartPos;
+    private Vector3 groundStartPos;
     private Quaternion startRot;
 
     private bool active = false;
@@ -32,6 +33,7 @@ public class Sisyphus : MonoBehaviour {
         startPos = transform.position;
         startRot = transform.rotation;
         boulderStartPos = boulder.transform.position;
+        groundStartPos = ground.position;
     }
 
     // Use this for initialization
@@ -60,15 +62,14 @@ public class Sisyphus : MonoBehaviour {
             rb.velocity = Vector3.Project(mouseForce, transform.forward);
 
             // Move ground towards camera
-            Vector3 groundPos = ground.position;
-            groundPos.z -= Time.deltaTime * mouseForce.y;
+            ground.Translate(Vector3.back * Mathf.Max(mouseForce.y, 0f) * Time.deltaTime * 0.5f);
 
             // Move boulder and player's x position
-            /*pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
-            Debug.Log(rb.velocity);
+            Vector3 pushForce = mouseForce;
             pushForce *= 20f;
-            boulder.AddForce(pushForce);
-            */
+            pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
+            Debug.Log(pushForce);
+            boulder.transform.RotateAround(boulder.transform.position, Vector3.right, pushForce.y * Time.deltaTime);
 
             // lose energy while pushing
             if (mouseOffset.y > moveCursorZone.y) {
@@ -93,7 +94,7 @@ public class Sisyphus : MonoBehaviour {
 
         // Check boulder distance
         if (boulder.transform.position.z > transform.position.z) {
-            GameState.bestDistance = Mathf.Max(GameState.bestDistance, boulder.transform.position.z - boulderStartPos.z);
+            GameState.bestDistance = Mathf.Max(GameState.bestDistance, groundStartPos.z - ground.position.z);
         } else if ((boulder.transform.position - transform.position).sqrMagnitude >= loseDistance) {
 			GameState.TurnNight();
             SetPlayable(false);
@@ -105,6 +106,7 @@ public class Sisyphus : MonoBehaviour {
             rb.transform.position = startPos;
             rb.transform.rotation = startRot;
             boulder.transform.position = boulderStartPos;
+            ground.position = groundStartPos;
             StopRigidbody(rb);
             StopRigidbody(boulder);
             rb.WakeUp();
