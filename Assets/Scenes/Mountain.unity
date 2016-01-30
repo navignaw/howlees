@@ -494,6 +494,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 931484793}
   - 114: {fileID: 931484794}
+  - 114: {fileID: 931484795}
+  - 114: {fileID: 931484796}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -529,6 +531,33 @@ MonoBehaviour:
   upgradeScreen: {fileID: 1098250578}
   startScreen: {fileID: 883367234}
   gameScreen: {fileID: 2035350626}
+--- !u!114 &931484795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931484792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e52d710a8797544820e7ee1608d60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sisyphus: {fileID: 603062962}
+  strengthFormula: {fileID: 931484796}
+--- !u!114 &931484796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931484792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Strength Formula
+  Scale: 1
+  Offset: {x: 0, y: 10}
 --- !u!1 &1027821694
 GameObject:
   m_ObjectHideFlags: 0

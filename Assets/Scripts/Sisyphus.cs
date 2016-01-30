@@ -6,19 +6,24 @@ public class Sisyphus : MonoBehaviour {
     public float hillSlope;
     public float maxStrength;
     public float energy;
-    public float energyRate = 0.5f;
+    public float energyDepleteRate = 2f;
+    public float energyGainRate = 0.5f;
 
     const float loseDistance = 1f;
 
     private Rigidbody rb;
     private Vector3 hillDirection;
     private Vector3 mouseStart;
+    private Vector3 startPos;
+    private Vector3 boulderStartPos;
     private bool active = false;
 
     void Awake () {
         rb = GetComponent<Rigidbody>();
         rb.Sleep();
         boulder.Sleep();
+        startPos = transform.position;
+        boulderStartPos = boulder.transform.position;
     }
 
     // Use this for initialization
@@ -49,7 +54,9 @@ public class Sisyphus : MonoBehaviour {
             boulder.AddForce(pushForce);
 
             // lose energy while pushing
-            energy = Mathf.Max(0f, energy - energyRate * Time.deltaTime);
+            energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
+        } else {
+            energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
         }
 
         if (Input.GetMouseButtonUp(0)) {
@@ -69,6 +76,8 @@ public class Sisyphus : MonoBehaviour {
     public void SetPlayable(bool playable) {
         active = playable;
         if (playable) {
+            rb.transform.position = startPos;
+            boulder.transform.position = boulderStartPos;
             rb.WakeUp();
             boulder.WakeUp();
             energy = maxStrength;
