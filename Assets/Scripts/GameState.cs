@@ -66,9 +66,11 @@ public class GameState : MonoBehaviour {
 					Cursor.SetCursor(pushCursor, Vector2.zero, CursorMode.Auto);
 				else if (Input.GetMouseButtonUp(0))
 					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
-
-
-				if (time >= night) TurnNight();
+				if (time >= night) 
+				{
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+					TurnNight();
+				}
 			}
 				break;
 			case State.UPGRADE:
@@ -135,6 +137,7 @@ public class GameState : MonoBehaviour {
 		gameState.nightScreen.SetActive(false);
 		gameState.startScreen.SetActive(false);
 		gameState.gameScreen.SetActive(false);
+//		Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 	}
 
 	public void UpgradeMenu(bool open) {
@@ -148,13 +151,5 @@ public class GameState : MonoBehaviour {
 	public void NextDay() {
 		GameState.day++;
 		TurnDay();
-	}
-
-	Color ColorMap (Color value, float fromSource, float toSource, Color fromTarget, Color toTarget)
-	{
-		value.r = (value.r - fromSource) / (toSource - fromSource) * (toTarget.r - fromTarget.r);
-		value.g = (value.g - fromSource) / (toSource - fromSource) * (toTarget.g - fromTarget.g);
-		value.b = (value.b - fromSource) / (toSource - fromSource) * (toTarget.b - fromTarget.b);
-		return value;
 	}
 }
