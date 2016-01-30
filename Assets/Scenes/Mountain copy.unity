@@ -586,8 +586,11 @@ MonoBehaviour:
   sun: {fileID: 1462320835}
   pauseScreen: {fileID: 7114195}
   upgradeScreen: {fileID: 1098250578}
+  nightScreen: {fileID: 1098250578}
   startScreen: {fileID: 883367234}
   gameScreen: {fileID: 2035350626}
+  defaultCursor: {fileID: 2800000, guid: 5231b8fc52c1437429a828b21b85a39e, type: 3}
+  pushCursor: {fileID: 2800000, guid: 93d3cfd05f8dc3e489aadb0e20eb8aad, type: 3}
 --- !u!1 &1027821694
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animateSpeed: 0.5
+  text: {fileID: 0}
+  fadingIn: 1
 --- !u!1 &1030003034
 GameObject:
   m_ObjectHideFlags: 0
