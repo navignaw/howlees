@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Sisyphus : MonoBehaviour {
     public Rigidbody boulder;
+    public Transform ground;
+    public Vector2 moveBounds; // how far player can move horizontally from starting pos
+    public Vector2 moveCursorZone; // safe zone in which you can move cursor without affecting movement
     public float hillSlope;
-    public float maxStrength;
+    public float maxStrength = 10f;
     public float energy;
+    public float speed = 1f;
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
+    public float maxHorizontalForce = 1f;
 
     const float loseDistance = 1f;
 
@@ -17,6 +22,7 @@ public class Sisyphus : MonoBehaviour {
     private Vector3 startPos;
     private Vector3 boulderStartPos;
     private Quaternion startRot;
+
     private bool active = false;
 
     void Awake () {
@@ -31,6 +37,7 @@ public class Sisyphus : MonoBehaviour {
     // Use this for initialization
     void Start () {
         hillDirection = Vector3.RotateTowards(Vector3.forward, Vector3.up, hillSlope * Mathf.PI / 180f, 0f);
+        energy = maxStrength;
     }
 
     // Update is called once per frame
@@ -42,26 +49,45 @@ public class Sisyphus : MonoBehaviour {
         // click start
         if (Input.GetMouseButtonDown(0)) {
             mouseStart = Input.mousePosition;
+            rb.constraints |= RigidbodyConstraints.FreezeRotationY;
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
         }
 
-        // holding mouse button
+        // holding mouse button (pushing)
         if (Input.GetMouseButton(0)) {
             Vector3 mouseOffset = Input.mousePosition - mouseStart;
             Vector3 mouseForce = new Vector3(energy * mouseOffset.x / Screen.width, energy * mouseOffset.y / Screen.height, 0f);
-            Vector3 pushForce = Vector3.Project(mouseForce, hillDirection);
-            rb.velocity = pushForce;
+            rb.velocity = Vector3.Project(mouseForce, transform.forward);
 
-            pushForce.x = -mouseForce.x;
+            // Move ground towards camera
+            Vector3 groundPos = ground.position;
+            groundPos.z -= Time.deltaTime * mouseForce.y;
+
+            // Move boulder and player's x position
+            /*pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
+            Debug.Log(rb.velocity);
             pushForce *= 20f;
             boulder.AddForce(pushForce);
+            */
 
             // lose energy while pushing
-            energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
+            if (mouseOffset.y > moveCursorZone.y) {
+                energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
+            }
         } else {
+            // not holding mouse button (moving)
+            Vector3 mouseOffset = Input.mousePosition - new Vector3(Screen.width / 2, 0f, 0f);
+            if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
+                float angle = Time.deltaTime * (-speed * mouseOffset.x / Screen.width);
+                transform.RotateAround(boulder.transform.position, Vector3.up, angle);
+            }
+
             energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
         }
 
         if (Input.GetMouseButtonUp(0)) {
+            rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
+            rb.constraints |= RigidbodyConstraints.FreezePositionX;
             rb.velocity = Vector3.zero;
         }
 
