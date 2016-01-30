@@ -5,7 +5,7 @@ using System.Collections;
 public class FadeText : MonoBehaviour {
     public float animateSpeed = 0.5f;
 
-    protected Text text;
+    private Text text;
     private bool fadingIn = true;
 
     // Use this for initialization
@@ -32,11 +32,6 @@ public class FadeText : MonoBehaviour {
         newColor.a = 0;
         text.color = newColor;
         fadingIn = true;
-        UpdateText();
-    }
-
-    // override in children to set text
-    protected virtual void UpdateText() {
     }
 
 }

@@ -15,6 +15,7 @@ public class GameState : MonoBehaviour {
 	// Score and records
 	public static int day = 0;
 	public static float bestDistance = 0f;
+	public static float karma = 0f;
 	public static float time = 0f;
 	public static float morning = 90;
 	public static float noon = 180;
@@ -28,6 +29,7 @@ public class GameState : MonoBehaviour {
 	public Sun sun;
 	public GameObject pauseScreen;
 	public GameObject upgradeScreen;
+	public GameObject nightScreen;
 	public GameObject startScreen;
 	public GameObject gameScreen;
 
@@ -37,7 +39,7 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameState = this;
-		TurnDay();
+		NextDay();
 	}
 
 	// Update is called once per frame
@@ -50,7 +52,7 @@ public class GameState : MonoBehaviour {
 			case State.NIGHT:
 			{
 				/* speed up to sundown */
-				if (time < morning || time >= night) 
+				if (time < morning || time >= night)
 					time += nightTimeScale * Time.deltaTime;
 			}
 				break;
@@ -73,12 +75,13 @@ public class GameState : MonoBehaviour {
 	{
 		Init();
 		curGameState = State.NIGHT;
+		timeScale = nightTimeScale;
+		gameState.nightScreen.SetActive(true);
 	}
 
 	static public void TurnDay ()
 	{
 		Init();
-		GameState.day++;
 		curGameState = State.DAY;
 		timeScale = dayTimeScale;
 		time = morning;
@@ -120,7 +123,29 @@ public class GameState : MonoBehaviour {
 		//boulder.SetPlayable(false);
 		gameState.upgradeScreen.SetActive(false);
 		gameState.pauseScreen.SetActive(false);
+		gameState.nightScreen.SetActive(false);
 		gameState.startScreen.SetActive(false);
 		gameState.gameScreen.SetActive(false);
+	}
+
+	public void UpgradeMenu(bool open) {
+		if (open) {
+			TurnUpgrade();
+		} else {
+			TurnNight();
+		}
+	}
+
+	public void NextDay() {
+		GameState.day++;
+		TurnDay();
+	}
+
+	Color ColorMap (Color value, float fromSource, float toSource, Color fromTarget, Color toTarget)
+	{
+		value.r = (value.r - fromSource) / (toSource - fromSource) * (toTarget.r - fromTarget.r);
+		value.g = (value.g - fromSource) / (toSource - fromSource) * (toTarget.g - fromTarget.g);
+		value.b = (value.b - fromSource) / (toSource - fromSource) * (toTarget.b - fromTarget.b);
+		return value;
 	}
 }

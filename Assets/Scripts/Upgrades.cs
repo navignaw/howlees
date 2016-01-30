@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Upgrades : MonoBehaviour {
     public Sisyphus sisyphus;
-    public Equation strengthFormula; // how strength grows
+    public Equation strengthFormula; // how fast strength grows
 
     public static int strengthUpgrade = 0;
     public static int flowers = 0;

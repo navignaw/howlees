@@ -64,24 +64,26 @@ public class Sisyphus : MonoBehaviour {
         }
 
         // Check boulder distance
-        if (boulder.transform.position.z < transform.position.z - loseDistance) {
-            Debug.Log("YOU LOSE");
+        if (boulder.transform.position.z > transform.position.z) {
+            GameState.bestDistance = Mathf.Max(GameState.bestDistance, boulder.transform.position.z - boulderStartPos.z);
+        } else if ((boulder.transform.position - transform.position).sqrMagnitude >= loseDistance) {
 			GameState.TurnNight();
             SetPlayable(false);
         } else {
-            GameState.bestDistance = Mathf.Max(GameState.bestDistance, boulder.transform.position.z);
         }
     }
 
     public void SetPlayable(bool playable) {
-        active = playable;
-        if (playable) {
+        if (playable && !active) {
             rb.transform.position = startPos;
             boulder.transform.position = boulderStartPos;
+            rb.velocity = Vector3.zero;
+            boulder.velocity = Vector3.zero;
             rb.WakeUp();
             boulder.WakeUp();
             energy = maxStrength;
         }
+        active = playable;
     }
 
 }

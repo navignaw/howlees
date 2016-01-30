@@ -7,9 +7,11 @@ public class Sun : MonoBehaviour {
 	static Color nightSun = new Color(0.396f, 0.357f, 0.760f);
 	static Color sunColor = new Color(0,0,0);
 
+	private SpriteRenderer spriteRenderer;
+
 	// Use this for initialization
 	void Start () {
-	
+		spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
 	}
 
 	// Update is called once per frame
@@ -20,8 +22,8 @@ public class Sun : MonoBehaviour {
 	{
 		this.transform.eulerAngles = new Vector3 (0,180,time);
 		sunColor = ColorMap(time);
-		this.GetComponentInChildren<SpriteRenderer>().color = sunColor;
-		print(sunColor);
+		spriteRenderer.color = sunColor;
+		//print(sunColor);
 	}
 
 	Color ColorMap (float value)
@@ -32,7 +34,7 @@ public class Sun : MonoBehaviour {
 		Color fromTarget = morningSun;
 		Color toTarget = nightSun;
 		if (value > GameState.morning && value <= GameState.noon)
-		{	
+		{
 			fromSource = GameState.morning;
 			toSource = GameState.noon;
 			fromTarget = morningSun;
