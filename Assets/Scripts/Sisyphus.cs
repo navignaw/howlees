@@ -31,7 +31,7 @@ public class Sisyphus : MonoBehaviour {
             Vector3 mouseForce = (Input.mousePosition - mouseStart) / Screen.height * strength;
             //Debug.Log(mouseForce);
             Vector3 pushForce = Vector3.Project(mouseForce, hillDirection);
-            boulder.AddForce(pushForce);
+            //boulder.AddForce(pushForce * 500f);
             rb.velocity = pushForce;
             //Debug.Log(pushForce);
         }
