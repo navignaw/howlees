@@ -7,6 +7,7 @@ public class FadeText : MonoBehaviour {
 
     private Text text;
     private bool fadingIn = true;
+    private bool fading = true;
 
     // Use this for initialization
     void Awake () {
@@ -15,6 +16,10 @@ public class FadeText : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (!fading) {
+            return;
+        }
+
         // fade opacity
         Color newColor = text.color;
         newColor.a = Mathf.Clamp01(newColor.a + animateSpeed * Time.deltaTime * (fadingIn ? 1 : -1));
@@ -23,7 +28,7 @@ public class FadeText : MonoBehaviour {
         if (fadingIn && newColor.a >= 0.99f) {
             fadingIn = false;
         } else if (!fadingIn && newColor.a <= 0.01f) {
-            enabled = false;
+            fading = false;
         }
     }
 
@@ -31,6 +36,7 @@ public class FadeText : MonoBehaviour {
         Color newColor = text.color;
         newColor.a = 0;
         text.color = newColor;
+        fading = true;
         fadingIn = true;
     }
 

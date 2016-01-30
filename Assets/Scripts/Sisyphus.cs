@@ -16,6 +16,7 @@ public class Sisyphus : MonoBehaviour {
     private Vector3 mouseStart;
     private Vector3 startPos;
     private Vector3 boulderStartPos;
+    private Quaternion startRot;
     private bool active = false;
 
     void Awake () {
@@ -23,6 +24,7 @@ public class Sisyphus : MonoBehaviour {
         rb.Sleep();
         boulder.Sleep();
         startPos = transform.position;
+        startRot = transform.rotation;
         boulderStartPos = boulder.transform.position;
     }
 
@@ -69,21 +71,27 @@ public class Sisyphus : MonoBehaviour {
         } else if ((boulder.transform.position - transform.position).sqrMagnitude >= loseDistance) {
 			GameState.TurnNight();
             SetPlayable(false);
-        } else {
         }
     }
 
     public void SetPlayable(bool playable) {
         if (playable && !active) {
             rb.transform.position = startPos;
+            rb.transform.rotation = startRot;
             boulder.transform.position = boulderStartPos;
-            rb.velocity = Vector3.zero;
-            boulder.velocity = Vector3.zero;
+            StopRigidbody(rb);
+            StopRigidbody(boulder);
             rb.WakeUp();
             boulder.WakeUp();
             energy = maxStrength;
         }
         active = playable;
+    }
+
+    void StopRigidbody(Rigidbody rb) {
+        rb.isKinematic = true;
+        rb.velocity = Vector3.zero;
+        rb.isKinematic = false;
     }
 
 }
