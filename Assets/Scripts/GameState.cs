@@ -2,42 +2,46 @@
 using System.Collections;
 
 public class GameState : MonoBehaviour {
-	const int NIGHT = 0;
-	const int DAY = 1;
-	const int UPGRADE = 2;
-	const int PAUSE = 3;
-	const int INTRO = 4;
-	const int START = 5;
-	int curGameState;
-	Boulder boulder;
-	Sisyphus sisyphus;
-	GameObject pauseScreen;
-	GameObject upgradeScreen;
-	GameObject startScreen;
+	public enum State {
+		NIGHT,
+		DAY,
+		UPGRADE,
+		PAUSE,
+		INTRO,
+		START
+	}
+
+	// Score and records
+	public static int day = 0;
+	public static float bestDistance = 0f;
+
+	public Sisyphus sisyphus;
+	public GameObject pauseScreen;
+	public GameObject upgradeScreen;
+	public GameObject startScreen;
+	public GameObject gameScreen;
+
+	State curGameState = State.START;
+	//Boulder boulder;
 
 	// Use this for initialization
 	void Start () {
 		TurnIntro();
-		sisyphus = GameObject.Find("Sisyphus").GetComponent<Sisyphus>();
-		boulder = GameObject.Find("Boulder").GetComponent<Boulder>();
-		pauseScreen = GameObject.Find("PauseScreen");
-		upgradeScreen = GameObject.Find("UpgradeScreen");
-		startScreen = GameObject.Find("StartScreen");
 	}
-	
+
 	// Update is called once per frame
-	void Update () {		
+	void Update () {
 		switch (curGameState)
 		{
-			case NIGHT:
+			case State.NIGHT:
 				break;
-			case DAY:
+			case State.DAY:
 				break;
-			case UPGRADE:
+			case State.UPGRADE:
 				break;
-			case PAUSE:
+			case State.PAUSE:
 				break;
-			case INTRO:
+			case State.INTRO:
 				break;
 		}
 	}
@@ -45,48 +49,50 @@ public class GameState : MonoBehaviour {
 	void TurnNight ()
 	{
 		Init();
-		curGameState = NIGHT;
-	}	
+		curGameState = State.NIGHT;
+	}
 
 	void TurnDay ()
 	{
 		Init();
-		curGameState = DAY;
+		GameState.day++;
+		curGameState = State.DAY;
+		gameScreen.SetActive(true);
 		sisyphus.SetPlayable(true);
-		boulder.SetPlayable(true);
+		//boulder.SetPlayable(true);
 	}
 
 	void TurnUpgrade ()
 	{
 		Init();
-		curGameState = UPGRADE;
+		curGameState = State.UPGRADE;
 		upgradeScreen.SetActive(true);
 	}
 
 	public void TurnPause ()
 	{
 		Init();
-		curGameState = PAUSE;
-	}	
+		curGameState = State.PAUSE;
+	}
 
 	public void TurnIntro ()
 	{
 		Init();
-		curGameState = INTRO;
-		Camera.main.GetComponent<CameraMove>().RunIntro();
+		curGameState = State.INTRO;
+		//Camera.main.GetComponent<CameraMove>().RunIntro();
 	}
 
 	public void TurnStart ()
 	{
 		Init();
-		curGameState = START;
+		curGameState = State.START;
 		startScreen.SetActive(true);
 	}
 
 	void Init()
 	{
 		sisyphus.SetPlayable(false);
-		boulder.SetPlayable(false);
+		//boulder.SetPlayable(false);
 		upgradeScreen.SetActive(false);
 		pauseScreen.SetActive(false);
 		startScreen.SetActive(false);

@@ -6,20 +6,30 @@ public class Sisyphus : MonoBehaviour {
     public float hillSlope;
     public float strength;
 
-    public float bestDistance = 0f;
+    const float loseDistance = 1f;
 
     private Rigidbody rb;
     private Vector3 hillDirection;
     private Vector3 mouseStart;
+    private bool active = false;
+
+    void Awake () {
+        rb = GetComponent<Rigidbody>();
+        rb.Sleep();
+        boulder.Sleep();
+    }
 
     // Use this for initialization
     void Start () {
         hillDirection = Vector3.RotateTowards(Vector3.forward, Vector3.up, hillSlope * Mathf.PI / 180f, 0f);
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update () {
+        if (!active) {
+            return;
+        }
+
         // click start
         if (Input.GetMouseButtonDown(0)) {
             mouseStart = Input.mousePosition;
@@ -41,7 +51,22 @@ public class Sisyphus : MonoBehaviour {
             rb.velocity = Vector3.zero;
         }
 
-        bestDistance = Mathf.Max(bestDistance, boulder.transform.position.z);
+        // Check boulder distance
+        if (boulder.transform.position.z < transform.position.z - loseDistance) {
+            // TODO: LOSE
+            Debug.Log("YOU LOSE");
+            SetPlayable(false);
+        } else {
+            GameState.bestDistance = Mathf.Max(GameState.bestDistance, boulder.transform.position.z);
+        }
+    }
+
+    public void SetPlayable(bool playable) {
+        active = playable;
+        if (playable) {
+            rb.WakeUp();
+            boulder.WakeUp();
+        }
     }
 
 }
