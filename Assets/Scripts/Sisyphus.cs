@@ -6,6 +6,8 @@ public class Sisyphus : MonoBehaviour {
     public float hillSlope;
     public float strength;
 
+    public float bestDistance = 0f;
+
     private Rigidbody rb;
     private Vector3 hillDirection;
     private Vector3 mouseStart;
@@ -25,20 +27,21 @@ public class Sisyphus : MonoBehaviour {
 
         // holding mouse button
         if (Input.GetMouseButton(0)) {
-            float horizontalSpeed = Input.GetAxis("Mouse X");
-            float verticalSpeed = Input.GetAxis("Mouse Y");
-
-            Vector3 mouseForce = (Input.mousePosition - mouseStart) / Screen.height * strength;
-            //Debug.Log(mouseForce);
+            Vector3 mouseOffset = Input.mousePosition - mouseStart;
+            Vector3 mouseForce = new Vector3(strength * mouseOffset.x / Screen.width, strength * mouseOffset.y / Screen.height, 0f);
             Vector3 pushForce = Vector3.Project(mouseForce, hillDirection);
-            //boulder.AddForce(pushForce * 500f);
             rb.velocity = pushForce;
-            //Debug.Log(pushForce);
+
+            pushForce.x = -mouseForce.x;
+            pushForce *= 20f;
+            boulder.AddForce(pushForce);
         }
 
         if (Input.GetMouseButtonUp(0)) {
-            mouseStart = Vector3.zero;
+            rb.velocity = Vector3.zero;
         }
+
+        bestDistance = Mathf.Max(bestDistance, boulder.transform.position.z);
     }
 
 }
