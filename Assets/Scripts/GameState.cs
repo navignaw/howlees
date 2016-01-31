@@ -40,12 +40,16 @@ public class GameState : MonoBehaviour {
 	public GameObject newRecord;
 	public Texture2D defaultCursor;
 	public Texture2D pushCursor;
+	public AudioClip[] soundEffects;
 
 	static State curGameState = State.START;
+
+	private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
 		gameState = this;
+		audioSource = GetComponent<AudioSource>();
 		time = morning;
 		NextDay();
 		Cursor.SetCursor(defaultCursor, new Vector2(defaultCursor.width/4,0), CursorMode.Auto);
@@ -93,6 +97,7 @@ public class GameState : MonoBehaviour {
 		// new record!
 		if ((int)todaysBest > (int)bestDistance) {
 			gameState.newRecord.SetActive(true);
+			gameState.audioSource.PlayOneShot(gameState.soundEffects[0]);
 			bestDistance = todaysBest;
 		}
 		EarnKarma();

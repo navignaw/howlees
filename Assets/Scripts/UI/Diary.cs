@@ -39,6 +39,7 @@ public class Diary : MonoBehaviour {
     public void PrevIndex() {
         do {
             currentEntry = (currentEntry + diaryEntries.Count - 1) % diaryEntries.Count;
+            if (currentEntry == 0) break;
         } while (diaryEntries[currentEntry].day == 0);
         DisplayEntry();
     }
