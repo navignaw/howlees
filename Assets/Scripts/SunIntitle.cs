@@ -9,6 +9,7 @@ public class SunIntitle : MonoBehaviour {
 
 	//private SpriteRenderer spriteRenderer;
 	private UnityEngine.UI.Image img;
+	private UnityEngine.UI.Image img2;
 
 	float counter;
 
@@ -16,6 +17,7 @@ public class SunIntitle : MonoBehaviour {
 	void Start () {
 		//spriteRenderer = this.GetComponentInChildren<SpriteRenderer>();
 		img = GetComponent<UnityEngine.UI.Image>(); 
+		img2 = GameObject.FindWithTag ("Highlight").GetComponent<UnityEngine.UI.Image> ();
 		counter = 90.0f;
 	}
 
@@ -33,6 +35,7 @@ public class SunIntitle : MonoBehaviour {
 		//		this.transform.eulerAngles = new Vector3 (0,180,time);
 		sunColor = ColorMap(time);
 		img.color = sunColor;
+		img2.color = sunColor;
 	}
 
 	Color ColorMap (float value)
