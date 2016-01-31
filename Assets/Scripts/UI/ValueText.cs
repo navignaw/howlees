@@ -25,7 +25,7 @@ public class ValueText : MonoBehaviour {
         SetText();
     }
 
-    void SetText() {
+    public void SetText() {
         string value;
         switch (type) {
             case TextType.DAY:

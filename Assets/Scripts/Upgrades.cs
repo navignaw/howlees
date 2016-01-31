@@ -30,6 +30,9 @@ public class Upgrades : MonoBehaviour {
         foreach (UpgradeButton button in GetComponentsInChildren<UpgradeButton>()) {
             button.UpdateCost();
         }
+        foreach (ValueText valueText in GetComponentsInChildren<ValueText>()) {
+            valueText.SetText();
+        }
     }
 
     public void BuyAestheticUpgrade() {

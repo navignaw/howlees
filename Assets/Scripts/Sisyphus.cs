@@ -20,7 +20,6 @@ public class Sisyphus : MonoBehaviour {
     const float loseDistance = 4f;
 
     private Rigidbody rb;
-    private Vector3 hillDirection;
     private Vector3 startPos;
     private Vector3 startTransPos;
     private Vector3 boulderStartPos;
@@ -44,7 +43,6 @@ public class Sisyphus : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        hillDirection = Vector3.RotateTowards(Vector3.forward, Vector3.up, hillSlope * Mathf.PI / 180f, 0f);
         energy = maxStrength;
     }
 

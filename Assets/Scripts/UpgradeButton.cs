@@ -10,6 +10,7 @@ public class UpgradeButton : MonoBehaviour {
         TRACTION
     }
 
+    public Text costText;
     public Equation costEquation;
     public ButtonType type;
 
@@ -44,7 +45,10 @@ public class UpgradeButton : MonoBehaviour {
                 break;
         }
         button.interactable = GameState.karma > cost;
-        // TODO: update text
+        costText.text = cost.ToString();
     }
 
+    public void PayCost() {
+        GameState.karma -= cost;
+    }
 }

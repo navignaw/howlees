@@ -588,6 +588,22 @@ Prefab:
       propertyPath: sisyphus
       value: 
       objectReference: {fileID: 2022876453}
+    - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ff6864257b09a943859af49edd18937, type: 2}
   m_IsPrefabParent: 0
