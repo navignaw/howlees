@@ -11,7 +11,7 @@ public class UpgradeButton : MonoBehaviour {
     }
 
     public Text costText;
-    public Equation costEquation;
+    public EquationCost costEquation;
     public ButtonType type;
 
     private Button button;

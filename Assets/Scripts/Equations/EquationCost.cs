@@ -3,7 +3,7 @@ using System.Collections;
 
 // f(x) = eval(x)
 [AddComponentMenu("Equation/Identity")]
-public class Equation : MonoBehaviour {
+public class EquationCost : MonoBehaviour {
 #if UNITY_EDITOR
     public string Name;
 #endif
@@ -15,9 +15,8 @@ public class Equation : MonoBehaviour {
 		return Scale * f (x + Offset.x) + Offset.y;
 	}
 
-    // identity function by default. override!
 	public virtual float f(float x) {
-        return x;
-    }
+		return Mathf.Pow(2, x);
+	}    
 
 }
