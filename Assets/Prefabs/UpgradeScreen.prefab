@@ -802,6 +802,7 @@ MonoBehaviour:
   staminaFormula: {fileID: 11483380}
   tractionFormula: {fileID: 11478216}
   music: {fileID: 0}
+  aestheticObjects: []
 --- !u!114 &11458812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1132,8 +1133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Stamina Formula
-  Scale: -0.2
-  Offset: {x: 0, y: 2}
+  Scale: 0.2
+  Offset: {x: 0, y: 0.5}
 --- !u!114 &11483746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1146,7 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Strength Formula
-  Scale: 2
+  Scale: 4
   Offset: {x: 0, y: 10}
 --- !u!114 &11490704
 MonoBehaviour:
@@ -1793,11 +1794,11 @@ Prefab:
       objectReference: {fileID: 11483746}
     - target: {fileID: 0}
       propertyPath: Offset.y
-      value: 4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Scale
-      value: 2
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: staminaFormula
