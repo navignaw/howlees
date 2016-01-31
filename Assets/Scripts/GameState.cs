@@ -94,6 +94,7 @@ public class GameState : MonoBehaviour {
 		Init();
 		bestDistance = Mathf.Max(todaysBest, bestDistance);
 		EarnKarma();
+		Diary.UnlockDiaryEntry();
 		curGameState = State.NIGHT;
 		timeScale = nightTimeScale;
 		gameState.nightCamera.SetActive(true);
