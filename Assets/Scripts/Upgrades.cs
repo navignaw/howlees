@@ -30,13 +30,14 @@ public class Upgrades : MonoBehaviour {
         // Cheat for getting karma
         if (Input.GetKeyDown("k")) {
             GameState.karma = 1000;
+            UpdateUpgrades();
         }
 #endif
     }
 
     public void UpdateUpgrades() {
         sisyphus.maxStrength = strengthFormula.eval(strengthUpgrade);
-        sisyphus.energyDepleteRate = staminaFormula.eval(staminaUpgrade);
+        sisyphus.energyGainRate = staminaFormula.eval(staminaUpgrade);
         sisyphus.traction = tractionFormula.eval(tractionUpgrade);
 
         foreach (UpgradeButton button in GetComponentsInChildren<UpgradeButton>()) {

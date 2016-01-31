@@ -102,7 +102,7 @@ public class Sisyphus : MonoBehaviour {
             boulder.AddForce(new Vector3((boulder.transform.position.x - objectTransform.position.x) * horizontalForce, 0f, 0f));
 
             // lose energy while pushing
-            energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
+            energy = Mathf.Max(0f, energy - Mathf.Max(energyDepleteRate, 0.1f) * Time.deltaTime);
 
         } else {
             ground.Translate(Vector3.forward * traction * Time.deltaTime);
