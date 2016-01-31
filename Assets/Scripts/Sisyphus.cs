@@ -111,6 +111,8 @@ public class Sisyphus : MonoBehaviour {
             newPos.x = Mathf.Clamp(newPos.x + horizontalSpeed, startTransPos.x + moveBounds.x, startTransPos.x + moveBounds.y);
             objectTransform.position = newPos;
             boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
+        } else if (Mathf.Abs(boulder.velocity.x) < 0.5f) {
+            boulder.AddForce(new Vector3(Random.Range(-60f, 60f) * 50f, 0f, 0f)); // randomly deviate from center
         }
         // stopped moving this frame
 

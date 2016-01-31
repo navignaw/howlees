@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Map : MonoBehaviour {
     public float maxHeight = 500f;
-    public float maxDepth = 150f;
+    public float maxDepth = 180f;
     public Transform ground;
 
     public RectTransform boulderTransform;

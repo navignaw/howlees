@@ -16,7 +16,8 @@ public class Diary : MonoBehaviour {
     }
 
     void OnEnable() {
-        DisplayEntry();
+        currentEntry = 0;
+        PrevIndex(); // show last page
     }
 
     // Update is called once per frame

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameState : MonoBehaviour {
@@ -36,6 +37,7 @@ public class GameState : MonoBehaviour {
 	public GameObject gameScreen;
 	public GameObject nightCamera;
 	public GameObject notif;
+	public GameObject newRecord;
 	public Texture2D defaultCursor;
 	public Texture2D pushCursor;
 
@@ -87,7 +89,12 @@ public class GameState : MonoBehaviour {
 	{
 		Init();
 		Cursor.visible = true;
-		bestDistance = Mathf.Max(todaysBest, bestDistance);
+
+		// new record!
+		if (todaysBest > bestDistance) {
+			gameState.newRecord.SetActive(true);
+			bestDistance = todaysBest;
+		}
 		EarnKarma();
 		if (Diary.UnlockDiaryEntry()) {
 			gameState.notif.SetActive(true);
@@ -134,10 +141,11 @@ public class GameState : MonoBehaviour {
 		gameState.nightScreen.SetActive(false);
 		gameState.startScreen.SetActive(false);
 		gameState.gameScreen.SetActive(false);
+		gameState.newRecord.SetActive(false);
 	}
 
 	public static void EarnKarma() {
-		karma += (int) todaysBest / 2;
+		karma += (int) (todaysBest / 2f);
 	}
 
 	public void UpgradeMenu(bool open) {
