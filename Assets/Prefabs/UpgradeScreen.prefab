@@ -116,9 +116,6 @@ GameObject:
   - 114: {fileID: 11448582}
   - 114: {fileID: 11427092}
   - 114: {fileID: 11406930}
-  - 114: {fileID: 11484264}
-  - 114: {fileID: 11466124}
-  - 114: {fileID: 11440718}
   m_Layer: 5
   m_Name: Deco
   m_TagString: Untagged
@@ -600,9 +597,6 @@ GameObject:
   - 114: {fileID: 11425166}
   - 114: {fileID: 11440108}
   - 114: {fileID: 11493424}
-  - 114: {fileID: 11495002}
-  - 114: {fileID: 11464428}
-  - 114: {fileID: 11413816}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -726,9 +720,6 @@ GameObject:
   - 114: {fileID: 11474708}
   - 114: {fileID: 11499394}
   - 114: {fileID: 11435084}
-  - 114: {fileID: 11407634}
-  - 114: {fileID: 11464252}
-  - 114: {fileID: 11465232}
   m_Layer: 5
   m_Name: Strength
   m_TagString: Untagged
@@ -1506,20 +1497,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11407634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.8
-  Offset: {x: 2, y: 1}
 --- !u!114 &11411422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1643,20 +1620,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BACK
---- !u!114 &11413816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.5
-  Offset: {x: 1, y: 3}
 --- !u!114 &11416014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1839,7 +1802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costText: {fileID: 11459788}
-  costEquation: {fileID: 11440718}
+  costEquation: {fileID: 11406930}
   type: 0
   tallies:
   - {fileID: 113206}
@@ -2115,7 +2078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costText: {fileID: 11462230}
-  costEquation: {fileID: 11413816}
+  costEquation: {fileID: 11493424}
   type: 2
   tallies:
   - {fileID: 168316}
@@ -2133,20 +2096,6 @@ MonoBehaviour:
   - {fileID: 194172}
   - {fileID: 128340}
   - {fileID: 198762}
---- !u!114 &11440718
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.2
-  Offset: {x: 0, y: 4}
 --- !u!114 &11441426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2762,34 +2711,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11464252
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.8
-  Offset: {x: 2, y: 1}
---- !u!114 &11464428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.5
-  Offset: {x: 1, y: 3}
 --- !u!114 &11464638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2817,34 +2738,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11465232
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.8
-  Offset: {x: 2, y: 1}
---- !u!114 &11466124
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.2
-  Offset: {x: 0, y: 4}
 --- !u!114 &11466874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3325,20 +3218,6 @@ MonoBehaviour:
   Name: Strength Formula
   Scale: 4
   Offset: {x: 0, y: 10}
---- !u!114 &11484264
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.2
-  Offset: {x: 0, y: 4}
 --- !u!114 &11485408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3648,20 +3527,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11495002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37e92cdacf1b0407dbc56dd175876663, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Cost
-  Scale: 0.5
-  Offset: {x: 1, y: 3}
 --- !u!114 &11497010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3704,7 +3569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costText: {fileID: 11406652}
-  costEquation: {fileID: 11465232}
+  costEquation: {fileID: 11435084}
   type: 1
   tallies:
   - {fileID: 148178}
@@ -5544,7 +5409,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: costEquation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11493424}
     - target: {fileID: 0}
       propertyPath: type
       value: 3
