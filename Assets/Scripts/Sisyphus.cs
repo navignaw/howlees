@@ -6,7 +6,6 @@ public class Sisyphus : MonoBehaviour {
     public Transform ground;
     public Transform objectTransform;
     public Vector2 moveBounds; // how far player can move horizontally from starting pos
-    public Vector2 moveCursorZone; // safe zone in which you can move cursor without affecting movement
     public float hillSlope;
     public float maxStrength = 10f;
     public float energy;
@@ -101,7 +100,9 @@ public class Sisyphus : MonoBehaviour {
 
         if (horizontalSpeed != 0) {
             horizontalSpeed *= Time.deltaTime * speed;
-            objectTransform.position += new Vector3(horizontalSpeed, 0f, 0f);
+            Vector3 newPos = objectTransform.position;
+            newPos.x = Mathf.Clamp(newPos.x + horizontalSpeed, startTransPos.x + moveBounds.x, startTransPos.x + moveBounds.y);
+            objectTransform.position = newPos;
             boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
         }
 

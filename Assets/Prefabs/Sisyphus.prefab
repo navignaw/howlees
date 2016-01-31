@@ -734,8 +734,7 @@ MonoBehaviour:
   boulder: {fileID: 0}
   ground: {fileID: 0}
   objectTransform: {fileID: 413402}
-  moveBounds: {x: -1, y: 1}
-  moveCursorZone: {x: 1, y: 1}
+  moveBounds: {x: -5, y: 5}
   hillSlope: 10
   maxStrength: 5
   energy: 0
@@ -822,11 +821,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveBounds.x
-      value: -1
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveBounds.y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.x
