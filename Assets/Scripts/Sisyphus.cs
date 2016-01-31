@@ -11,6 +11,7 @@ public class Sisyphus : MonoBehaviour {
     public float maxStrength = 10f;
     public float energy;
     public float speed = 1f;
+    public float traction = 1f;
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
     public float horizontalForce = 50f;
@@ -91,10 +92,13 @@ public class Sisyphus : MonoBehaviour {
         } else {
             // not holding mouse button (moving)
             Vector3 mouseOffset = Input.mousePosition - new Vector3(Screen.width / 2, 0f, 0f);
+            float horizontalSpeed = Time.deltaTime * speed * mouseOffset.x / Screen.width;
             if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
-                objectTransform.position += new Vector3(Time.deltaTime * speed * mouseOffset.x / Screen.width, 0f, 0f);
+                objectTransform.position += new Vector3(horizontalSpeed, 0f, 0f);
             }
 
+            ground.Translate(Vector3.forward * traction * Time.deltaTime);
+            boulder.transform.RotateAround(boulder.transform.position, Vector3.left, Mathf.Min(traction * Time.deltaTime, maxRollSpeed));
             energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
         }
 

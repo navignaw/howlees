@@ -26,8 +26,7 @@ public class Upgrades : MonoBehaviour {
     public void UpdateUpgrades() {
         sisyphus.maxStrength = strengthFormula.eval(strengthUpgrade);
         sisyphus.energyDepleteRate = staminaFormula.eval(staminaUpgrade);
-        //sisyphus.energyDepleteRate = staminaFormula.eval(staminaUpgrade);
-        // TODO: traction
+        sisyphus.traction = tractionFormula.eval(tractionUpgrade);
 
         foreach (UpgradeButton button in GetComponentsInChildren<UpgradeButton>()) {
             button.UpdateCost();
