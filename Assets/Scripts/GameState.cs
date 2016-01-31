@@ -6,7 +6,7 @@ public class GameState : MonoBehaviour {
 	public enum State {
 		NIGHT,
 		DAY,
-		PAUSE,
+		DIARY,
 		INTRO,
 		START
 	}
@@ -28,7 +28,8 @@ public class GameState : MonoBehaviour {
 
 	public Sisyphus sisyphus;
 	public Sun sun;
-	public GameObject pauseScreen;
+	public Boulder boulder;
+	public GameObject diaryScreen;
 	public GameObject upgradeScreen;
 	public GameObject nightScreen;
 	public GameObject startScreen;
@@ -38,14 +39,13 @@ public class GameState : MonoBehaviour {
 	public Texture2D pushCursor;
 
 	static State curGameState = State.START;
-	//Boulder boulder;
 
 	// Use this for initialization
 	void Start () {
 		gameState = this;
 		time = morning;
 		NextDay();
-		Cursor.SetCursor(defaultCursor, new Vector2(defaultCursor.width/4,0), CursorMode.Auto);
+		Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 	}
 
 	// Update is called once per frame
@@ -60,6 +60,7 @@ public class GameState : MonoBehaviour {
 				/* speed up to sundown */
 				if (time < night && time >= morning)
 				{
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 					time += nightTimeScale * Time.deltaTime;
 				}
 				else if (time != midnight)
@@ -71,12 +72,17 @@ public class GameState : MonoBehaviour {
 				time += timeScale * Time.deltaTime;
 				if (time < morning)
 					time += nightTimeScale * Time.deltaTime;
+				if (Input.GetMouseButtonDown(0))
+					Cursor.SetCursor(pushCursor, Vector2.zero, CursorMode.Auto);
+				else if (Input.GetMouseButtonUp(0))
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 				if (time >= night) {
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 					TurnNight();
 				}
 			}
 				break;
-			case State.PAUSE:
+			case State.DIARY:
 				break;
 			case State.INTRO:
 				break;
@@ -92,7 +98,6 @@ public class GameState : MonoBehaviour {
 		timeScale = nightTimeScale;
 		gameState.nightCamera.SetActive(true);
 		gameState.nightScreen.SetActive(true);
-		Cursor.visible = true;
 	}
 
 	static public void TurnDay ()
@@ -104,14 +109,7 @@ public class GameState : MonoBehaviour {
 		timeScale = dayTimeScale;
 		gameState.gameScreen.SetActive(true);
 		gameState.sisyphus.SetPlayable(true);
-		Cursor.visible = false;
-		//boulder.SetPlayable(true);
-	}
-
-	static public void TurnPause ()
-	{
-		Init();
-		curGameState = State.PAUSE;
+		gameState.boulder.SetPlayable(true);
 	}
 
 	static public void TurnIntro ()
@@ -131,9 +129,9 @@ public class GameState : MonoBehaviour {
 	static void Init()
 	{
 		gameState.sisyphus.SetPlayable(false);
-		//boulder.SetPlayable(false);
+		gameState.boulder.SetPlayable(false);
 		gameState.upgradeScreen.SetActive(false);
-		gameState.pauseScreen.SetActive(false);
+		gameState.diaryScreen.SetActive(false);
 		gameState.nightScreen.SetActive(false);
 		gameState.startScreen.SetActive(false);
 		gameState.gameScreen.SetActive(false);
@@ -149,6 +147,16 @@ public class GameState : MonoBehaviour {
 			gameState.nightScreen.SetActive(false);
 		} else {
 			gameState.upgradeScreen.SetActive(false);
+			gameState.nightScreen.SetActive(true);
+		}
+	}
+
+	public void DiaryMenu(bool open) {
+		if (open) {
+			gameState.diaryScreen.SetActive(true);
+			gameState.nightScreen.SetActive(false);
+		} else {
+			gameState.diaryScreen.SetActive(false);
 			gameState.nightScreen.SetActive(true);
 		}
 	}

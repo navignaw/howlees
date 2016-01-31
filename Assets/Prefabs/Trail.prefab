@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429756}
+  - 114: {fileID: 11447212}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -85,6 +86,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 429756}
   m_RootOrder: 0
+--- !u!114 &11447212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01768e1b806d0a741863031dd0370689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 21228384}
+  opacitySpeed: 0.2
 --- !u!212 &21228384
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -112,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 07e7cb51b7002fe4aa5c0043d8b5f021, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &21291134
@@ -155,6 +169,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: -708657143
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 21228384}
+    - target: {fileID: 0}
+      propertyPath: opacitySpeed
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

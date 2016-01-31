@@ -49,6 +49,7 @@ public class UpgradeButton : MonoBehaviour {
                 cost = (int) costEquation.eval(Upgrades.tractionUpgrade);
                 break;
         }
+        if (!button) button = GetComponent<Button>();
         button.interactable = GameState.karma >= cost;
         costText.text = cost.ToString();
         DrawTallies();
