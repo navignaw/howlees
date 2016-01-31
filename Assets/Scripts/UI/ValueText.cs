@@ -25,7 +25,7 @@ public class ValueText : MonoBehaviour {
         SetText();
     }
 
-    void SetText() {
+    public void SetText() {
         string value;
         switch (type) {
             case TextType.DAY:
@@ -49,6 +49,7 @@ public class ValueText : MonoBehaviour {
                 break;
         };
 
+        if (!text) text = GetComponent<Text>();
         text.text = prefix + value + suffix;
     }
 

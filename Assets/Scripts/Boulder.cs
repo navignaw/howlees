@@ -27,7 +27,6 @@ public class Boulder : MonoBehaviour {
 		boulderSpeed = sisyphus.boulderSpeed;
 		rockSpeed = GetComponent<Rigidbody>().velocity.magnitude + boulderSpeed;
 
-		print (sisyphus.boulderSpeed);
 		if (wasRolling)
 		{
 			rockSpeed += 2;
@@ -37,9 +36,9 @@ public class Boulder : MonoBehaviour {
 			startRollingTime = Time.time;
 			wasRolling = true;
 
-			if ((Time.time - prevTrailTime) > 0.1f)
+			if ((Time.time - prevTrailTime) > 0.2f)
 			{
-				GameObject thisTrail = Instantiate(trail, new Vector3(transform.position.x, 0.4f, transform.position.z + 0.3f), startRot) as GameObject;
+				GameObject thisTrail = Instantiate(trail, new Vector3(transform.position.x, 0.2f, transform.position.z + 0.3f), startRot) as GameObject;
 				thisTrail.transform.parent = hill.transform;
 				prevTrailTime = Time.time;
 			}

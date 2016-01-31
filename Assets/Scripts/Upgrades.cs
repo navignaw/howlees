@@ -7,6 +7,9 @@ public class Upgrades : MonoBehaviour {
     public Equation staminaFormula;  // how fast stamina grows
     public Equation tractionFormula; // how fast traction grows
 
+    public AudioSource music;
+    public GameObject[] aestheticObjects;
+
     public static int aesthetics = 0;
     public static int strengthUpgrade = 0;
     public static int staminaUpgrade = 0;
@@ -22,6 +25,15 @@ public class Upgrades : MonoBehaviour {
         UpdateUpgrades();
     }
 
+    void Update() {
+#if UNITY_EDITOR
+        // Cheat for getting karma
+        if (Input.GetKeyDown("k")) {
+            GameState.karma = 1000;
+        }
+#endif
+    }
+
     public void UpdateUpgrades() {
         sisyphus.maxStrength = strengthFormula.eval(strengthUpgrade);
         sisyphus.energyDepleteRate = staminaFormula.eval(staminaUpgrade);
@@ -30,11 +42,21 @@ public class Upgrades : MonoBehaviour {
         foreach (UpgradeButton button in GetComponentsInChildren<UpgradeButton>()) {
             button.UpdateCost();
         }
+        foreach (ValueText valueText in GetComponentsInChildren<ValueText>()) {
+            valueText.SetText();
+        }
     }
 
     public void BuyAestheticUpgrade() {
+        if (aesthetics == 0) {
+            music.Play();
+        }
+
+        if (aesthetics < aestheticObjects.Length) {
+            aestheticObjects[aesthetics].SetActive(true);
+        }
+
         aesthetics++;
-        // TODO: stuff
         UpdateUpgrades();
     }
 
