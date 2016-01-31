@@ -11,6 +11,8 @@ GameObject:
   - 222: {fileID: 22257072}
   - 114: {fileID: 11464638}
   - 114: {fileID: 11448582}
+  - 114: {fileID: 11427092}
+  - 114: {fileID: 11471868}
   m_Layer: 5
   m_Name: Deco
   m_TagString: Untagged
@@ -63,6 +65,8 @@ GameObject:
   - 222: {fileID: 22240840}
   - 114: {fileID: 11479024}
   - 114: {fileID: 11413544}
+  - 114: {fileID: 11497010}
+  - 114: {fileID: 11432812}
   m_Layer: 5
   m_Name: Traction
   m_TagString: Untagged
@@ -81,6 +85,8 @@ GameObject:
   - 222: {fileID: 22289704}
   - 114: {fileID: 11454426}
   - 114: {fileID: 11425166}
+  - 114: {fileID: 11440108}
+  - 114: {fileID: 11458812}
   m_Layer: 5
   m_Name: Hold
   m_TagString: Untagged
@@ -130,6 +136,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22412970}
+  - 114: {fileID: 11457156}
+  - 114: {fileID: 11483746}
+  - 114: {fileID: 11483380}
+  - 114: {fileID: 11478216}
   m_Layer: 5
   m_Name: UpgradeScreen
   m_TagString: Untagged
@@ -148,6 +158,8 @@ GameObject:
   - 222: {fileID: 22282078}
   - 114: {fileID: 11482374}
   - 114: {fileID: 11474708}
+  - 114: {fileID: 11499394}
+  - 114: {fileID: 11401044}
   m_Layer: 5
   m_Name: Push
   m_TagString: Untagged
@@ -224,6 +236,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &11401044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Cost
+  Scale: 5
+  Offset: {x: 0, y: 5}
 --- !u!114 &11406652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,7 +321,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11479024}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11457156}
+        m_MethodName: BuyTractionUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11413644
@@ -369,9 +406,47 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11454426}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11457156}
+        m_MethodName: BuyStaminaUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11427092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99229a29faf7e364197a096e36815a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costEquation: {fileID: 11471868}
+  type: 0
+--- !u!114 &11432812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Cost
+  Scale: 5
+  Offset: {x: 0, y: 5}
 --- !u!114 &11433346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,6 +532,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11440108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99229a29faf7e364197a096e36815a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costEquation: {fileID: 11458812}
+  type: 2
 --- !u!114 &11447772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,7 +610,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11464638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11457156}
+        m_MethodName: BuyAestheticUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11454426
@@ -552,6 +651,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11457156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e52d710a8797544820e7ee1608d60f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sisyphus: {fileID: 0}
+  strengthFormula: {fileID: 11483746}
+  staminaFormula: {fileID: 11483380}
+  tractionFormula: {fileID: 11478216}
+--- !u!114 &11458812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Cost
+  Scale: 5
+  Offset: {x: 0, y: 5}
 --- !u!114 &11459788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,6 +773,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11471868
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Cost
+  Scale: 5
+  Offset: {x: 0, y: 5}
 --- !u!114 &11474708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,9 +825,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11482374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11457156}
+        m_MethodName: BuyStrengthUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11478216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Traction Formula
+  Scale: 1
+  Offset: {x: 0, y: 1}
 --- !u!114 &11479024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -773,6 +940,60 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11483380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stamina Formula
+  Scale: -0.05
+  Offset: {x: 0, y: 2}
+--- !u!114 &11483746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Strength Formula
+  Scale: 5
+  Offset: {x: 0, y: 10}
+--- !u!114 &11497010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99229a29faf7e364197a096e36815a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costEquation: {fileID: 11432812}
+  type: 3
+--- !u!114 &11499394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99229a29faf7e364197a096e36815a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costEquation: {fileID: 11401044}
+  type: 1
 --- !u!114 &11499552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1111,7 +1332,83 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11457156}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Name
+      value: Traction Formula
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: strengthFormula
+      value: 
+      objectReference: {fileID: 11483746}
+    - target: {fileID: 0}
+      propertyPath: Offset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Scale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: staminaFormula
+      value: 
+      objectReference: {fileID: 11483380}
+    - target: {fileID: 0}
+      propertyPath: aestheticsCost
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: strengthCost
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: staminaCost
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tractionCost
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyTractionUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: costEquation
+      value: 
+      objectReference: {fileID: 11432812}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: tractionFormula
+      value: 
+      objectReference: {fileID: 11478216}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156592}
