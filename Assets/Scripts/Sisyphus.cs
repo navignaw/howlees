@@ -102,7 +102,7 @@ public class Sisyphus : MonoBehaviour {
         } else {
             ground.Translate(Vector3.forward * traction * Time.deltaTime);
             boulder.transform.RotateAround(boulder.transform.position, Vector3.left, Mathf.Min(traction * 0.25f, maxRollSpeed));
-            energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
+            energy = Mathf.Min(maxStrength, energy + Mathf.Min(energyGainRate, 2f) * Time.deltaTime);
         }
 
         if (horizontalSpeed != 0) {
