@@ -739,7 +739,7 @@ MonoBehaviour:
   maxStrength: 5
   energy: 0
   speed: 3
-  traction: 1
+  traction: 0.5
   energyDepleteRate: 2
   energyGainRate: 0.5
   maxRollSpeed: 1
@@ -877,7 +877,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: traction
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxRollSpeed

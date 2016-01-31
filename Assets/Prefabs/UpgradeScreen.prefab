@@ -125,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &150068
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - 114: {fileID: 11440108}
   - 114: {fileID: 11458812}
   m_Layer: 5
-  m_Name: Hold
+  m_Name: Stamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - 114: {fileID: 11499394}
   - 114: {fileID: 11401044}
   m_Layer: 5
-  m_Name: Push
+  m_Name: Strength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Cost
-  Scale: 5
-  Offset: {x: 0, y: 5}
+  Scale: 2
+  Offset: {x: 0, y: 4}
 --- !u!114 &11406652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -801,6 +801,7 @@ MonoBehaviour:
   strengthFormula: {fileID: 11483746}
   staminaFormula: {fileID: 11483380}
   tractionFormula: {fileID: 11478216}
+  music: {fileID: 0}
 --- !u!114 &11458812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -813,8 +814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Cost
-  Scale: 5
-  Offset: {x: 0, y: 5}
+  Scale: 2
+  Offset: {x: 0, y: 4}
 --- !u!114 &11459788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -940,7 +941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hold
+  m_Text: stamina
 --- !u!114 &11471868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,8 +954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Cost
-  Scale: 5
-  Offset: {x: 0, y: 5}
+  Scale: 2
+  Offset: {x: 0, y: 4}
 --- !u!114 &11474708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1131,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Stamina Formula
-  Scale: -0.1
+  Scale: -0.2
   Offset: {x: 0, y: 2}
 --- !u!114 &11483746
 MonoBehaviour:
@@ -1278,7 +1279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: push
+  m_Text: strength
 --- !u!114 &11497010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1477,7 +1478,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: 50}
+  m_AnchoredPosition: {x: -80, y: 50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22416818
@@ -1598,7 +1599,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40, y: 50}
+  m_AnchoredPosition: {x: 80, y: 50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22468772
@@ -1756,7 +1757,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 50}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
@@ -1792,7 +1793,7 @@ Prefab:
       objectReference: {fileID: 11483746}
     - target: {fileID: 0}
       propertyPath: Offset.y
-      value: 0.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Scale
@@ -1860,7 +1861,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.x
-      value: -120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_AnchoredPosition.y
@@ -1929,6 +1930,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: Stamina
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
