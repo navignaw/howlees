@@ -69,25 +69,6 @@ public class Sisyphus : MonoBehaviour {
             return;
         }
 
-		if (Input.GetKeyDown (KeyCode.D)) {
-			anim.SetTrigger ("right");
-		}
-		if (Input.GetKeyUp (KeyCode.D)) {
-			if (Input.GetKey (KeyCode.W))
-				anim.SetTrigger ("push");
-			else
-				anim.SetTrigger ("idleRest");
-		}
-		if (Input.GetKeyDown (KeyCode.A)) {
-			anim.SetTrigger ("left");
-		}
-		if (Input.GetKeyUp (KeyCode.D)) {
-			if (Input.GetKey (KeyCode.W))
-				anim.SetTrigger ("push");
-			else
-				anim.SetTrigger ("idleRest");
-		}
-
         bool canPush = Mathf.Abs(boulder.transform.position.x - objectTransform.position.x) <= 1f;
         float horizontalSpeed = Input.GetAxis("Horizontal");
         float verticalSpeed = Input.GetAxis("Vertical");
@@ -125,6 +106,11 @@ public class Sisyphus : MonoBehaviour {
         }
 
         if (horizontalSpeed != 0) {
+            if (verticalSpeed == 0 && horizontalSpeed > 0) {
+                anim.SetTrigger("right");
+            } else if (verticalSpeed == 0 && horizontalSpeed < 0) {
+                anim.SetTrigger("left");
+            }
             horizontalSpeed *= Time.deltaTime * speed;
             Vector3 newPos = objectTransform.position;
             newPos.x = Mathf.Clamp(newPos.x + horizontalSpeed, startTransPos.x + moveBounds.x, startTransPos.x + moveBounds.y);
