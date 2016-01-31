@@ -4,6 +4,7 @@ using System.Collections;
 public class Sisyphus : MonoBehaviour {
     public Rigidbody boulder;
     public Transform ground;
+    public Transform objectTransform;
     public Vector2 moveBounds; // how far player can move horizontally from starting pos
     public Vector2 moveCursorZone; // safe zone in which you can move cursor without affecting movement
     public float hillSlope;
@@ -20,6 +21,7 @@ public class Sisyphus : MonoBehaviour {
     private Rigidbody rb;
     private Vector3 hillDirection;
     private Vector3 startPos;
+    private Vector3 startTransPos;
     private Vector3 boulderStartPos;
     private Vector3 groundStartPos;
     private Quaternion startRot;
@@ -33,6 +35,7 @@ public class Sisyphus : MonoBehaviour {
         boulder.Sleep();
         startPos = transform.position;
         startRot = transform.rotation;
+        startTransPos = objectTransform.position;
         boulderStartPos = boulder.transform.position;
         groundStartPos = ground.position;
         anim = transform.GetComponentInParent<Animator>();
@@ -89,8 +92,7 @@ public class Sisyphus : MonoBehaviour {
             // not holding mouse button (moving)
             Vector3 mouseOffset = Input.mousePosition - new Vector3(Screen.width / 2, 0f, 0f);
             if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
-                float angle = Time.deltaTime * (-speed * mouseOffset.x / Screen.width);
-                transform.RotateAround(boulder.transform.position, Vector3.up, angle);
+                objectTransform.position += new Vector3(Time.deltaTime * speed * mouseOffset.x / Screen.width, 0f, 0f);
             }
 
             energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
@@ -116,6 +118,7 @@ public class Sisyphus : MonoBehaviour {
         if (playable && !active) {
             rb.transform.position = startPos;
             rb.transform.rotation = startRot;
+            objectTransform.position = startTransPos;
             boulder.transform.position = boulderStartPos;
             ground.position = groundStartPos;
             StopRigidbody(rb);
