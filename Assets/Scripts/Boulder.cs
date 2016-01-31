@@ -17,7 +17,7 @@ public class Boulder : MonoBehaviour {
 	public GameObject hill;
 
 	private Rigidbody rb;
-	private List<List<Trail>> trails = new List<List<Trail>>();
+	private List<Trail> trails = new List<Trail>();
 
 	// Use this for initialization
 	void Start () {
@@ -42,7 +42,7 @@ public class Boulder : MonoBehaviour {
 			if ((Time.time - prevTrailTime) > 0.2f) {
 				GameObject thisTrail = Instantiate(trail, new Vector3(transform.position.x, 0.5f, transform.position.z + 0.3f), startRot) as GameObject;
 				thisTrail.transform.parent = hill.transform;
-				trails[trails.Count - 1].Add(thisTrail.GetComponent<Trail>());
+				trails.Add(thisTrail.GetComponent<Trail>());
 				prevTrailTime = Time.time;
 			}
 		}
@@ -59,19 +59,15 @@ public class Boulder : MonoBehaviour {
 			return;
 		}
 
-		bool shouldDelete = false;
-		foreach (List<Trail> dayTrails in trails) {
-			foreach (Trail trailObject in dayTrails) {
-				if (trailObject.UpdateOpacity()) {
-					Destroy(trailObject.gameObject);
-					shouldDelete = true;
-				}
+		int removeIndex = 0;
+		foreach (Trail trailObject in trails) {
+			if (trailObject.UpdateOpacity()) {
+				Destroy(trailObject.gameObject);
+				removeIndex++;
 			}
 		}
-		if (shouldDelete) {
-			trails.RemoveAt(0);
+		if (removeIndex > 0) {
+			trails.RemoveRange(0, removeIndex);
 		}
-
-		trails.Add(new List<Trail>());
 	}
 }

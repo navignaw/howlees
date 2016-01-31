@@ -1,0 +1,270 @@
+fileFormatVersion: 2
+guid: d37187d1f2a2bb84f819880c6c2e5c82
+timeCreated: 1454244313
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: stars_anim_0
+    21300002: stars_anim_1
+    21300004: stars_anim_2
+    21300006: stars_anim_3
+    21300008: stars_anim_4
+    21300010: stars_anim_5
+    21300012: stars_anim_6
+    21300014: stars_anim_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: stars_anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 48}
+        - {x: 0, y: 48}
+        - {x: -2, y: 47}
+        - {x: -47, y: 11}
+        - {x: -47, y: -9}
+        - {x: -2, y: -47}
+        - {x: 11, y: -47}
+        - {x: 48, y: -2}
+        - {x: 48, y: 4}
+        - {x: 47, y: 7}
+    - name: stars_anim_1
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 113.86372, y: 53}
+        - {x: 67.86372, y: 112}
+        - {x: 49.863724, y: 117}
+        - {x: -47.136276, y: 117}
+        - {x: -99.13628, y: 61}
+        - {x: -105.13628, y: 33}
+        - {x: -105.13628, y: -17}
+        - {x: -100.13628, y: -48}
+        - {x: -51.136276, y: -97}
+        - {x: -23.136276, y: -103}
+        - {x: 33.863724, y: -103}
+        - {x: 76.86372, y: -83}
+        - {x: 100.86372, y: -52}
+        - {x: 113.86372, y: -17}
+    - name: stars_anim_2
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107.22745, y: 26}
+        - {x: 106.22745, y: 40}
+        - {x: 96.22745, y: 72}
+        - {x: 45.227448, y: 115}
+        - {x: 27.227448, y: 118}
+        - {x: -23.772552, y: 118}
+        - {x: -52.772552, y: 115}
+        - {x: -96.77255, y: 79}
+        - {x: -113.77255, y: 36}
+        - {x: -113.77255, y: -25}
+        - {x: -99.77255, y: -68}
+        - {x: -39.772552, y: -103}
+        - {x: 33.227448, y: -103}
+        - {x: 88.22745, y: -73}
+        - {x: 105.22745, y: -26}
+        - {x: 107.22745, y: -17}
+    - name: stars_anim_3
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 110.591125, y: 52}
+        - {x: 69.591125, y: 102}
+        - {x: 26.591125, y: 118}
+        - {x: -23.408875, y: 118}
+        - {x: -33.408875, y: 117}
+        - {x: -69.408875, y: 101}
+        - {x: -109.408875, y: 60}
+        - {x: -110.408875, y: 48}
+        - {x: -110.408875, y: -34}
+        - {x: -105.408875, y: -42}
+        - {x: -71.408875, y: -85}
+        - {x: -41.408875, y: -102}
+        - {x: -29.408875, y: -103}
+        - {x: 35.591125, y: -103}
+        - {x: 65.591125, y: -89}
+        - {x: 98.591125, y: -52}
+        - {x: 110.591125, y: -28}
+    - name: stars_anim_4
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 113.954895, y: 36}
+        - {x: 109.954895, y: 53}
+        - {x: 87.954895, y: 92}
+        - {x: 35.954895, y: 118}
+        - {x: -31.045105, y: 118}
+        - {x: -64.045105, y: 99}
+        - {x: -91.045105, y: 76}
+        - {x: -107.045105, y: 35}
+        - {x: -107.045105, y: -26}
+        - {x: -77.045105, y: -82}
+        - {x: -30.045105, y: -103}
+        - {x: 30.954895, y: -103}
+        - {x: 65.954895, y: -89}
+        - {x: 92.954895, y: -72}
+        - {x: 113.954895, y: -26}
+    - name: stars_anim_5
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61.318604, y: 116}
+        - {x: 19.318604, y: 118}
+        - {x: -6.6813965, y: 118}
+        - {x: -25.681396, y: 115}
+        - {x: -43.681396, y: 107}
+        - {x: -73.6814, y: 95}
+        - {x: -103.6814, y: 44}
+        - {x: -103.6814, y: -22}
+        - {x: -83.6814, y: -72}
+        - {x: -43.681396, y: -103}
+        - {x: 57.318604, y: -103}
+        - {x: 95.3186, y: -71}
+        - {x: 117.3186, y: -25}
+        - {x: 117.3186, y: 57}
+    - name: stars_anim_6
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 110.68225, y: 33}
+        - {x: 100.68225, y: 61}
+        - {x: 76.68225, y: 94}
+        - {x: 32.68225, y: 118}
+        - {x: -42.31775, y: 118}
+        - {x: -97.31775, y: 77}
+        - {x: -110.31775, y: 38}
+        - {x: -110.31775, y: -16}
+        - {x: -106.31775, y: -42}
+        - {x: -64.31775, y: -91}
+        - {x: -33.31775, y: -103}
+        - {x: 25.682251, y: -103}
+        - {x: 42.68225, y: -101}
+        - {x: 64.68225, y: -86}
+        - {x: 98.68225, y: -52}
+        - {x: 110.68225, y: -20}
+    - name: stars_anim_7
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 0
+        width: 301.75
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107.04602, y: 51}
+        - {x: 67.04602, y: 100}
+        - {x: 32.04602, y: 117}
+        - {x: -37.95398, y: 117}
+        - {x: -76.95398, y: 96}
+        - {x: -109.95398, y: 54}
+        - {x: -111.95398, y: 38}
+        - {x: -111.95398, y: -28}
+        - {x: -107.95398, y: -38}
+        - {x: -75.95398, y: -84}
+        - {x: -26.95398, y: -103}
+        - {x: 24.04602, y: -103}
+        - {x: 68.04602, y: -86}
+        - {x: 97.04602, y: -45}
+        - {x: 107.04602, y: -22}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

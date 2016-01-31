@@ -68,25 +68,29 @@ public class Sisyphus : MonoBehaviour {
         if (!active || !delayOver) {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.W)) {
-            anim.SetTrigger("push");
-            pushing = true;
-        }
-        if (Input.GetKey(KeyCode.W) && !pushing) {
-            anim.SetTrigger("push");
-            pushing = true;
-        }
-        if (Input.GetKeyUp(KeyCode.W)) {
+
+        bool canPush = Mathf.Abs(boulder.transform.position.x - objectTransform.position.x) <= 1f;
+        float horizontalSpeed = Input.GetAxis("Horizontal");
+        float verticalSpeed = Input.GetAxis("Vertical");
+
+        // Push animations triggers
+        if (verticalSpeed > 0) {
+            if (!pushing && canPush) {
+                anim.SetTrigger("push");
+                pushing = true;
+            } else if (pushing && !canPush) {
+                anim.SetTrigger("idleRest");
+                pushing = false;
+            }
+        } else if (pushing) {
             anim.SetTrigger("idleRest");
             pushing = false;
         }
 
-        float horizontalSpeed = Input.GetAxis("Horizontal");
-        float verticalSpeed = Input.GetAxis("Vertical");
-
         // Push if pressing up
-        if (verticalSpeed > 0) {
+        if (verticalSpeed > 0 && canPush) {
             // Move ground towards camera
+            Debug.Log(Mathf.Abs(boulder.transform.position.x - objectTransform.position.x));
             ground.Translate(Vector3.back * energy * Time.deltaTime * 0.25f);
 
             // Rotate boulder and push horizontally
