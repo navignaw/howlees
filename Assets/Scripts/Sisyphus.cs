@@ -23,6 +23,7 @@ public class Sisyphus : MonoBehaviour {
     private Vector3 boulderStartPos;
     private Vector3 groundStartPos;
     private Quaternion startRot;
+    private Animator anim;
 
     private bool active = false;
 
@@ -34,6 +35,7 @@ public class Sisyphus : MonoBehaviour {
         startRot = transform.rotation;
         boulderStartPos = boulder.transform.position;
         groundStartPos = ground.position;
+        anim = GetComponent<Animator>();
     }
 
     // Use this for initialization
@@ -57,6 +59,8 @@ public class Sisyphus : MonoBehaviour {
 
         // holding mouse button (pushing)
         if (Input.GetMouseButton(0)) {
+            // start idle push animation
+
             Vector3 mouseOffset = Input.mousePosition - mouseStart;
             Vector3 mouseForce = new Vector3(energy * mouseOffset.x / Screen.width, energy * mouseOffset.y / Screen.height, 0f);
             rb.velocity = Vector3.Project(mouseForce, transform.forward);
