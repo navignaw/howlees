@@ -1,24 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
-	public void startgame(){
-		Application.LoadLevel ("Mountain");
+	public void StartGame() {
+		SceneManager.LoadScene("Mountain");
 	}
 
-	public void quitgame(){
-		Application.Quit ();
+	public void QuitGame() {
+		Application.Quit();
 	}
 
 }

@@ -21,7 +21,7 @@ public class Boulder : MonoBehaviour {
 		startRot = trail.transform.rotation;
 		prevTrailTime = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		boulderSpeed = sisyphus.boulderSpeed;
@@ -38,7 +38,7 @@ public class Boulder : MonoBehaviour {
 
 			if ((Time.time - prevTrailTime) > 0.2f)
 			{
-				GameObject thisTrail = Instantiate(trail, new Vector3(transform.position.x, 0.2f, transform.position.z + 0.3f), startRot) as GameObject;
+				GameObject thisTrail = Instantiate(trail, new Vector3(transform.position.x, 0.5f, transform.position.z + 0.3f), startRot) as GameObject;
 				thisTrail.transform.parent = hill.transform;
 				prevTrailTime = Time.time;
 			}

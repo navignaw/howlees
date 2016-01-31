@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sisyphus: {fileID: 0}
+  trail: {fileID: 102092, guid: fefb5e4abe5dc4c418d9a7b4d121eda1, type: 2}
+  hill: {fileID: 0}
 --- !u!135 &13513352
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -185,7 +187,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: trail
+      value: 
+      objectReference: {fileID: 102092, guid: fefb5e4abe5dc4c418d9a7b4d121eda1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110364}

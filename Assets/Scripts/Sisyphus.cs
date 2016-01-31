@@ -58,33 +58,27 @@ public class Sisyphus : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // measure boulder speed
-        if (Time.time - prevGroundTime >= 0.1f)
-        {
+        if (Time.time - prevGroundTime >= 0.1f) {
             boulderSpeed = (ground.position - prevGroundPos).magnitude;
             prevGroundTime = Time.time;
             prevGroundPos = ground.position;
         }
 
-        if (!delayOver && Time.time - playStart > 2.5fs)
-        {
+        if (!delayOver && Time.time - playStart > 2.5f) {
             delayOver = true;
         }
         if (!active || !delayOver) {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            anim.SetTrigger("push");                        
-            pushing = true;
-        }
-        if (Input.GetKey(KeyCode.W) &&
-            !pushing)
-        {
+        if (Input.GetKeyDown(KeyCode.W)) {
             anim.SetTrigger("push");
             pushing = true;
         }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
+        if (Input.GetKey(KeyCode.W) && !pushing) {
+            anim.SetTrigger("push");
+            pushing = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W)) {
             anim.SetTrigger("idleRest");
             pushing = false;
         }
