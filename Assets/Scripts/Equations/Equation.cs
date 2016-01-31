@@ -15,9 +15,8 @@ public class Equation : MonoBehaviour {
 		return Scale * f (x + Offset.x) + Offset.y;
 	}
 
-    // identity function by default. override!
 	public virtual float f(float x) {
-        return x;
-    }
+		return Mathf.Pow(2, x);
+	}    
 
 }

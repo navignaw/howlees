@@ -1210,6 +1210,46 @@ Prefab:
       propertyPath: aestheticObjects.Array.data[10]
       value: 
       objectReference: {fileID: 314571609}
+    - target: {fileID: 11499394, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Scale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483380, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Scale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478216, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Scale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483380, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478216, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483380, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478216, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11483746, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: Offset.x
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ff6864257b09a943859af49edd18937, type: 2}
   m_IsPrefabParent: 0
