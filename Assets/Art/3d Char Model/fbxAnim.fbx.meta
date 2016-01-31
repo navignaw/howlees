@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: 72d76a7f0759f4330b6d06c14479a476
+timeCreated: 1454263330
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: joint1
+    100004: joint12
+    100006: joint13
+    100008: joint14
+    100010: joint17
+    100012: joint18
+    100014: joint19
+    100016: joint2
+    100018: joint20
+    100020: joint21
+    100022: joint22
+    100024: joint23
+    100026: joint24
+    100028: joint25
+    100030: joint26
+    100032: joint3
+    100034: joint4
+    100036: joint5
+    100038: joint6
+    100040: pCube2
+    100042: Sisyphis
+    100044: transform1
+    100046: Waist_Control
+    400000: //RootNode
+    400002: joint1
+    400004: joint12
+    400006: joint13
+    400008: joint14
+    400010: joint17
+    400012: joint18
+    400014: joint19
+    400016: joint2
+    400018: joint20
+    400020: joint21
+    400022: joint22
+    400024: joint23
+    400026: joint24
+    400028: joint25
+    400030: joint26
+    400032: joint3
+    400034: joint4
+    400036: joint5
+    400038: joint6
+    400040: pCube2
+    400042: Sisyphis
+    400044: transform1
+    400046: Waist_Control
+    4300000: pCube2
+    7400000: Move Right
+    7400002: Move Left
+    9500000: //RootNode
+    13700000: pCube2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Move Right
+      takeName: Take 001
+      firstFrame: 550
+      lastFrame: 577
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Move Left
+      takeName: Take 001
+      firstFrame: 577
+      lastFrame: 604
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

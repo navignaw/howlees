@@ -69,6 +69,25 @@ public class Sisyphus : MonoBehaviour {
             return;
         }
 
+		if (Input.GetKeyDown (KeyCode.D)) {
+			anim.SetTrigger ("right");
+		}
+		if (Input.GetKeyUp (KeyCode.D)) {
+			if (Input.GetKey (KeyCode.W))
+				anim.SetTrigger ("push");
+			else
+				anim.SetTrigger ("idleRest");
+		}
+		if (Input.GetKeyDown (KeyCode.A)) {
+			anim.SetTrigger ("left");
+		}
+		if (Input.GetKeyUp (KeyCode.D)) {
+			if (Input.GetKey (KeyCode.W))
+				anim.SetTrigger ("push");
+			else
+				anim.SetTrigger ("idleRest");
+		}
+
         bool canPush = Mathf.Abs(boulder.transform.position.x - objectTransform.position.x) <= 1f;
         float horizontalSpeed = Input.GetAxis("Horizontal");
         float verticalSpeed = Input.GetAxis("Vertical");
