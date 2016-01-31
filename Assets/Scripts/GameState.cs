@@ -6,7 +6,7 @@ public class GameState : MonoBehaviour {
 	public enum State {
 		NIGHT,
 		DAY,
-		PAUSE,
+		DIARY,
 		INTRO,
 		START
 	}
@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour {
 	public Sisyphus sisyphus;
 	public Sun sun;
 	public Boulder boulder;
-	public GameObject pauseScreen;
+	public GameObject diaryScreen;
 	public GameObject upgradeScreen;
 	public GameObject nightScreen;
 	public GameObject startScreen;
@@ -82,7 +82,7 @@ public class GameState : MonoBehaviour {
 				}
 			}
 				break;
-			case State.PAUSE:
+			case State.DIARY:
 				break;
 			case State.INTRO:
 				break;
@@ -112,12 +112,6 @@ public class GameState : MonoBehaviour {
 		gameState.boulder.SetPlayable(true);
 	}
 
-	static public void TurnPause ()
-	{
-		Init();
-		curGameState = State.PAUSE;
-	}
-
 	static public void TurnIntro ()
 	{
 		Init();
@@ -137,7 +131,7 @@ public class GameState : MonoBehaviour {
 		gameState.sisyphus.SetPlayable(false);
 		gameState.boulder.SetPlayable(false);
 		gameState.upgradeScreen.SetActive(false);
-		gameState.pauseScreen.SetActive(false);
+		gameState.diaryScreen.SetActive(false);
 		gameState.nightScreen.SetActive(false);
 		gameState.startScreen.SetActive(false);
 		gameState.gameScreen.SetActive(false);
@@ -153,6 +147,16 @@ public class GameState : MonoBehaviour {
 			gameState.nightScreen.SetActive(false);
 		} else {
 			gameState.upgradeScreen.SetActive(false);
+			gameState.nightScreen.SetActive(true);
+		}
+	}
+
+	public void DiaryMenu(bool open) {
+		if (open) {
+			gameState.diaryScreen.SetActive(true);
+			gameState.nightScreen.SetActive(false);
+		} else {
+			gameState.diaryScreen.SetActive(false);
 			gameState.nightScreen.SetActive(true);
 		}
 	}

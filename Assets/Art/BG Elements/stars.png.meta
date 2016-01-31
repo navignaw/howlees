@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 19232e5bb235fd643b31e8bc3c53566c
+timeCreated: 1454239770
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: starsSprites-widthofEach301_0
+    21300002: starsSprites-widthofEach301_1
+    21300004: starsSprites-widthofEach301_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: starsSprites-widthofEach301_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 29
+        width: 254
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 96, y: -42}
+        - {x: 127, y: 24}
+        - {x: 127, y: 31}
+        - {x: 84, y: 54}
+        - {x: 49, y: 75}
+        - {x: 4, y: 121}
+        - {x: -3, y: 121}
+        - {x: -56, y: 70}
+        - {x: -127, y: 34}
+        - {x: -127, y: 19}
+        - {x: -126, y: 14}
+        - {x: -99, y: -40}
+        - {x: -82, y: -121}
+        - {x: -55, y: -121}
+        - {x: -7, y: -114}
+        - {x: 51, y: -121}
+        - {x: 82, y: -121}
+    - name: starsSprites-widthofEach301_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 56
+        width: 185
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23.5, y: 94.5}
+        - {x: -39.5, y: 94.5}
+        - {x: -92.5, y: 61.5}
+        - {x: -92.5, y: -44.5}
+        - {x: -60.5, y: -83.5}
+        - {x: -35.5, y: -94.5}
+        - {x: 31.5, y: -94.5}
+        - {x: 74.5, y: -76.5}
+        - {x: 92.5, y: -35.5}
+        - {x: 92.5, y: 39.5}
+        - {x: 59.5, y: 84.5}
+    - name: starsSprites-widthofEach301_2
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 6
+        width: 294
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 147, y: 10.5}
+        - {x: 12, y: 146.5}
+        - {x: -4, y: 146.5}
+        - {x: -87, y: 68.5}
+        - {x: -147, y: 20.5}
+        - {x: -147, y: -15.5}
+        - {x: -62, y: -54.5}
+        - {x: -3, y: -146.5}
+        - {x: 18, y: -146.5}
+        - {x: 83, y: -25.5}
+        - {x: 137, y: -0.5}
+        - {x: 147, y: 5.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
