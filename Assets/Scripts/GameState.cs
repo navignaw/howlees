@@ -35,6 +35,7 @@ public class GameState : MonoBehaviour {
 	public GameObject startScreen;
 	public GameObject gameScreen;
 	public GameObject nightCamera;
+	public GameObject notif;
 	public Texture2D defaultCursor;
 	public Texture2D pushCursor;
 
@@ -94,7 +95,9 @@ public class GameState : MonoBehaviour {
 		Init();
 		bestDistance = Mathf.Max(todaysBest, bestDistance);
 		EarnKarma();
-		Diary.UnlockDiaryEntry();
+		if (Diary.UnlockDiaryEntry()) {
+			gameState.notif.SetActive(true);
+		}
 		curGameState = State.NIGHT;
 		timeScale = nightTimeScale;
 		gameState.nightCamera.SetActive(true);
@@ -154,6 +157,7 @@ public class GameState : MonoBehaviour {
 
 	public void DiaryMenu(bool open) {
 		if (open) {
+			gameState.notif.SetActive(false);
 			gameState.diaryScreen.SetActive(true);
 			gameState.nightScreen.SetActive(false);
 		} else {
@@ -167,4 +171,5 @@ public class GameState : MonoBehaviour {
 		TurnDay();
 		nightCamera.SetActive(false);
 	}
+
 }

@@ -1430,6 +1430,7 @@ MonoBehaviour:
   startScreen: {fileID: 2105957864}
   gameScreen: {fileID: 878890076}
   nightCamera: {fileID: 1526663158}
+  notif: {fileID: 2046994886}
   defaultCursor: {fileID: 2800000, guid: 5231b8fc52c1437429a828b21b85a39e, type: 3}
   pushCursor: {fileID: 2800000, guid: 93d3cfd05f8dc3e489aadb0e20eb8aad, type: 3}
 --- !u!1001 &937855979
@@ -2554,11 +2555,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
-    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
@@ -2566,6 +2567,46 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
+    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
   m_IsPrefabParent: 0
@@ -2580,6 +2621,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1561240182}
   m_Script: {fileID: 11500000, guid: 184d1f9456d7f4c2ca95bae6c695ea99, type: 3}
+--- !u!1 &2046994886 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 117000, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
+  m_PrefabInternal: {fileID: 1947052681}
 --- !u!1001 &2081042004
 Prefab:
   m_ObjectHideFlags: 0
