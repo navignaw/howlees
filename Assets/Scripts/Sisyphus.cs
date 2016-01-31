@@ -35,7 +35,7 @@ public class Sisyphus : MonoBehaviour {
         startRot = transform.rotation;
         boulderStartPos = boulder.transform.position;
         groundStartPos = ground.position;
-        anim = GetComponent<Animator>();
+        anim = transform.GetComponentInParent<Animator>();
     }
 
     // Use this for initialization
@@ -52,6 +52,8 @@ public class Sisyphus : MonoBehaviour {
 
         // click start
         if (Input.GetMouseButtonDown(0)) {
+            // start idle push animation
+            anim.SetTrigger("idlePush");
             mouseStart = Input.mousePosition;
             rb.constraints |= RigidbodyConstraints.FreezeRotationY;
             rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
@@ -59,7 +61,6 @@ public class Sisyphus : MonoBehaviour {
 
         // holding mouse button (pushing)
         if (Input.GetMouseButton(0)) {
-            // start idle push animation
 
             Vector3 mouseOffset = Input.mousePosition - mouseStart;
             Vector3 mouseForce = new Vector3(energy * mouseOffset.x / Screen.width, energy * mouseOffset.y / Screen.height, 0f);
@@ -91,6 +92,9 @@ public class Sisyphus : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonUp(0)) {
+            // start idle rest animation
+            anim.SetTrigger("idleRest");
+
             rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
             rb.constraints |= RigidbodyConstraints.FreezePositionX;
             rb.velocity = Vector3.zero;
