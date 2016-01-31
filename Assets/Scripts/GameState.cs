@@ -59,8 +59,11 @@ public class GameState : MonoBehaviour {
 			{
 				/* speed up to sundown */
 				if (time < night && time >= morning)
+				{
+					Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
 					time += nightTimeScale * Time.deltaTime;
-				else
+				}
+				else if (time != midnight)
 					time = midnight;
 			}
 				break;

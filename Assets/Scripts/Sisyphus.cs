@@ -16,6 +16,7 @@ public class Sisyphus : MonoBehaviour {
     public float energyGainRate = 0.5f;
     public float horizontalForce = 50f;
     public float maxRollSpeed = 50f;
+    public float boulderSpeed;
 
     const float loseDistance = 1f;
 
@@ -27,6 +28,8 @@ public class Sisyphus : MonoBehaviour {
     private Vector3 groundStartPos;
     private Quaternion startRot;
     private Animator anim;
+    private Vector3 prevGroundPos;
+    private float prevGroundTime;
 
     private bool active = false;
 
@@ -39,6 +42,8 @@ public class Sisyphus : MonoBehaviour {
         startTransPos = objectTransform.position;
         boulderStartPos = boulder.transform.position;
         groundStartPos = ground.position;
+        prevGroundPos = ground.position;
+
         anim = transform.GetComponentInParent<Animator>();
     }
 
@@ -52,6 +57,14 @@ public class Sisyphus : MonoBehaviour {
     void Update () {
         if (!active) {
             return;
+        }
+
+        // measure boulder speed
+        if (Time.time - prevGroundTime >= 0.1f)
+        {
+            boulderSpeed = (ground.position - prevGroundPos).magnitude;
+            prevGroundTime = Time.time;
+            prevGroundPos = ground.position;
         }
 
         // click start
