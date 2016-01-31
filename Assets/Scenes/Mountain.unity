@@ -1397,6 +1397,14 @@ Prefab:
       propertyPath: costEquation
       value: 
       objectReference: {fileID: 1455861909}
+    - target: {fileID: 22414190, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 22467190, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11471868, guid: 9ff6864257b09a943859af49edd18937, type: 2}
     - {fileID: 11458812, guid: 9ff6864257b09a943859af49edd18937, type: 2}
