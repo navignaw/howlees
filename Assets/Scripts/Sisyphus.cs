@@ -15,7 +15,6 @@ public class Sisyphus : MonoBehaviour {
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
     public float horizontalForce = 50f;
-    public float maxRollSpeed = 50f;
     public float boulderSpeed;
     public float maxRollSpeed = 3f;
 
@@ -135,6 +134,7 @@ public class Sisyphus : MonoBehaviour {
 
     public void SetPlayable(bool playable) {
         if (playable && !active) {
+            anim.SetTrigger("idleRest");
             rb.transform.position = startPos;
             rb.transform.rotation = startRot;
             objectTransform.position = startTransPos;

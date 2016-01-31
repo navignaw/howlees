@@ -54,7 +54,15 @@ ModelImporter:
     400044: transform1
     400046: Waist_Control
     4300000: pCube2
-    7400000: Take 001
+    7400000: Idle Sit
+    7400002: Sit to Rest
+    7400004: Sit to Rest 2
+    7400006: Idle Rest Touch Rock
+    7400008: Rest No Touch
+    7400010: Rest to Push
+    7400012: Idle Push
+    7400014: Push
+    7400016: Rest to Sit
     9500000: //RootNode
     13700000: pCube2
   materials:
@@ -77,7 +85,691 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle Sit
+      takeName: Take 001
+      firstFrame: 283
+      lastFrame: 315
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Sit to Rest
+      takeName: Take 001
+      firstFrame: 420
+      lastFrame: 480
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Sit to Rest 2
+      takeName: Take 001
+      firstFrame: 481
+      lastFrame: 530
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle Rest Touch Rock
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Rest No Touch
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Rest to Push
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle Push
+      takeName: Take 001
+      firstFrame: 532
+      lastFrame: 550
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Push
+      takeName: Take 001
+      firstFrame: 321
+      lastFrame: 358
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Rest to Sit
+      takeName: Take 001
+      firstFrame: 358
+      lastFrame: 420
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: Sisyphis
+        weight: 1
+      - path: Sisyphis/Waist_Control
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint2/joint1
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint12/joint13/joint14
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint6/joint5/joint4/joint3/joint24/joint25/joint26
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint18/joint19/joint20
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22
+        weight: 1
+      - path: Sisyphis/Waist_Control/transform1/joint17/joint21/joint22/joint23
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
