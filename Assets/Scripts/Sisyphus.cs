@@ -28,9 +28,7 @@ public class Sisyphus : MonoBehaviour {
     private Animator anim;
     private Vector3 prevGroundPos;
     private float prevGroundTime;
-    private float prevVerticalSpeed;
     private bool active = false;
-    private float playDelay = 2;
     private float playStart;
     private bool delayOver;
     private bool pushing;
@@ -112,8 +110,6 @@ public class Sisyphus : MonoBehaviour {
             boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
         }
         // stopped moving this frame
-
-        prevVerticalSpeed = verticalSpeed;
 
         // Check boulder distance
         GameState.todaysBest = Mathf.Max(GameState.todaysBest, groundStartPos.z - ground.position.z);

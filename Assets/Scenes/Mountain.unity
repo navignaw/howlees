@@ -1337,6 +1337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sisyphus: {fileID: 870827793}
   sun: {fileID: 95773162}
+  boulder: {fileID: 2038830675}
   pauseScreen: {fileID: 631649347}
   upgradeScreen: {fileID: 1476618400}
   nightScreen: {fileID: 567158756}
@@ -2383,6 +2384,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22438110, guid: 41551e6d98f6c914a9844fbc10cab254,
     type: 2}
   m_PrefabInternal: {fileID: 1947052681}
+--- !u!114 &2038830675 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11445318, guid: ea30671b4fbf94cb1a0849e959366d3c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1561240182}
+  m_Script: {fileID: 11500000, guid: 184d1f9456d7f4c2ca95bae6c695ea99, type: 3}
 --- !u!1001 &2081042004
 Prefab:
   m_ObjectHideFlags: 0

@@ -28,6 +28,7 @@ public class GameState : MonoBehaviour {
 
 	public Sisyphus sisyphus;
 	public Sun sun;
+	public Boulder boulder;
 	public GameObject pauseScreen;
 	public GameObject upgradeScreen;
 	public GameObject nightScreen;
@@ -38,7 +39,6 @@ public class GameState : MonoBehaviour {
 	public Texture2D pushCursor;
 
 	static State curGameState = State.START;
-	//Boulder boulder;
 
 	// Use this for initialization
 	void Start () {
@@ -109,7 +109,7 @@ public class GameState : MonoBehaviour {
 		timeScale = dayTimeScale;
 		gameState.gameScreen.SetActive(true);
 		gameState.sisyphus.SetPlayable(true);
-		//boulder.SetPlayable(true);
+		gameState.boulder.SetPlayable(true);
 	}
 
 	static public void TurnPause ()
@@ -135,7 +135,7 @@ public class GameState : MonoBehaviour {
 	static void Init()
 	{
 		gameState.sisyphus.SetPlayable(false);
-		//boulder.SetPlayable(false);
+		gameState.boulder.SetPlayable(false);
 		gameState.upgradeScreen.SetActive(false);
 		gameState.pauseScreen.SetActive(false);
 		gameState.nightScreen.SetActive(false);
