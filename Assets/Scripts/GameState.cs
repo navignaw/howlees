@@ -6,7 +6,6 @@ public class GameState : MonoBehaviour {
 	public enum State {
 		NIGHT,
 		DAY,
-		UPGRADE,
 		PAUSE,
 		INTRO,
 		START
@@ -14,16 +13,17 @@ public class GameState : MonoBehaviour {
 
 	// Score and records
 	public static int day = 0;
+	public static float todaysBest = 0f;
 	public static float bestDistance = 0f;
-	public static float karma = 0f;
+	public static int karma = 0;
 	public static float time = 90;
 	public static float morning = 90;
 	public static float noon = 180;
 	public static float night = 270;
 	public static float midnight = 0;
 
-	static float dayTimeScale = 10;
-	static float nightTimeScale = 30;
+	static float dayTimeScale = 5;
+	static float nightTimeScale = 50;
 	static float timeScale = 10;
 
 	public Sisyphus sisyphus;
@@ -82,8 +82,6 @@ public class GameState : MonoBehaviour {
 				}
 			}
 				break;
-			case State.UPGRADE:
-				break;
 			case State.PAUSE:
 				break;
 			case State.INTRO:
@@ -94,6 +92,8 @@ public class GameState : MonoBehaviour {
 	static public void TurnNight ()
 	{
 		Init();
+		bestDistance = Mathf.Max(todaysBest, bestDistance);
+		EarnKarma();
 		curGameState = State.NIGHT;
 		timeScale = nightTimeScale;
 		gameState.nightCamera.SetActive(true);
@@ -103,19 +103,13 @@ public class GameState : MonoBehaviour {
 	static public void TurnDay ()
 	{
 		Init();
+		todaysBest = 0;
 		curGameState = State.DAY;
+		if (time > morning) time = midnight;
 		timeScale = dayTimeScale;
 		gameState.gameScreen.SetActive(true);
 		gameState.sisyphus.SetPlayable(true);
 		//boulder.SetPlayable(true);
-	}
-
-	static public void TurnUpgrade ()
-	{
-		Init();
-		curGameState = State.UPGRADE;
-		gameState.upgradeScreen.SetActive(true);
-
 	}
 
 	static public void TurnPause ()
@@ -149,11 +143,17 @@ public class GameState : MonoBehaviour {
 		gameState.gameScreen.SetActive(false);
 	}
 
+	public static void EarnKarma() {
+		karma += (int) todaysBest / 2;
+	}
+
 	public void UpgradeMenu(bool open) {
 		if (open) {
-			TurnUpgrade();
+			gameState.upgradeScreen.SetActive(true);
+			gameState.nightScreen.SetActive(false);
 		} else {
-			TurnNight();
+			gameState.upgradeScreen.SetActive(false);
+			gameState.nightScreen.SetActive(true);
 		}
 	}
 

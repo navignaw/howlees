@@ -5,6 +5,7 @@ using System.Collections;
 public class ValueText : MonoBehaviour {
     public enum TextType {
         DAY,
+        TODAYS_BEST,
         BEST_DISTANCE,
         KARMA,
     }
@@ -29,6 +30,10 @@ public class ValueText : MonoBehaviour {
         switch (type) {
             case TextType.DAY:
                 value = GameState.day.ToString();
+                break;
+
+            case TextType.TODAYS_BEST:
+                value = Mathf.Ceil(GameState.todaysBest).ToString();
                 break;
 
             case TextType.BEST_DISTANCE:

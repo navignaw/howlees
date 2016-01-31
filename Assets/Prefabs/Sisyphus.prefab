@@ -689,7 +689,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 92
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6513760
 BoxCollider:
@@ -737,14 +737,14 @@ MonoBehaviour:
   moveBounds: {x: -1, y: 1}
   moveCursorZone: {x: 1, y: 1}
   hillSlope: 10
-  maxStrength: 10
+  maxStrength: 5
   energy: 0
   speed: 3
   traction: 1
   energyDepleteRate: 2
   energyGainRate: 0.5
-  horizontalForce: 250
-  maxRollSpeed: 50
+  horizontalForce: 100
+  maxRollSpeed: 1
 --- !u!137 &13777342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -810,7 +810,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveCursorZone.y
@@ -858,7 +858,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: horizontalForce
-      value: 250
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -882,7 +882,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxRollSpeed
-      value: 50
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxStrength
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
