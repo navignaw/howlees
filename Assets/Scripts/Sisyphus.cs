@@ -15,7 +15,7 @@ public class Sisyphus : MonoBehaviour {
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
     public float horizontalForce = 50f;
-    public float maxRollSpeed = 1f;
+    public float maxRollSpeed = 50f;
 
     const float loseDistance = 1f;
 

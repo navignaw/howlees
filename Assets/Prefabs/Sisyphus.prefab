@@ -744,7 +744,7 @@ MonoBehaviour:
   energyDepleteRate: 2
   energyGainRate: 0.5
   horizontalForce: 250
-  maxRollSpeed: 1
+  maxRollSpeed: 50
 --- !u!137 &13777342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -879,6 +879,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: traction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxRollSpeed
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -20,7 +20,7 @@ public class Sun : MonoBehaviour {
 
 	public void Tick (float time)
 	{
-		this.transform.eulerAngles = new Vector3 (0,180,time);
+//		this.transform.eulerAngles = new Vector3 (0,180,time);
 		sunColor = ColorMap(time);
 		spriteRenderer.color = sunColor;
 	}
@@ -32,14 +32,21 @@ public class Sun : MonoBehaviour {
 		float toSource = 270;
 		Color fromTarget = morningSun;
 		Color toTarget = nightSun;
-		if (value > GameState.morning && value <= GameState.noon)
+		if (value <= GameState.morning)
+		{
+			fromSource = GameState.midnight;
+			toSource = GameState.morning;
+			fromTarget = nightSun;
+			toTarget = morningSun;
+		}
+		else if (value > GameState.morning && value <= GameState.noon)
 		{
 			fromSource = GameState.morning;
 			toSource = GameState.noon;
 			fromTarget = morningSun;
 			toTarget = noonSun;
 		}
-		if (value > GameState.noon && value <= GameState.night)
+		else if (value > GameState.noon && value <= GameState.night)
 		{
 			fromSource = GameState.noon;
 			toSource = GameState.night;
@@ -49,6 +56,11 @@ public class Sun : MonoBehaviour {
 		newColor.r = (value - fromSource) / (toSource - fromSource) * (toTarget.r - fromTarget.r) + fromTarget.r;
 		newColor.g = (value - fromSource) / (toSource - fromSource) * (toTarget.g - fromTarget.g) + fromTarget.g;
 		newColor.b = (value - fromSource) / (toSource - fromSource) * (toTarget.b - fromTarget.b) + fromTarget.b;
+		if (value > GameState.night)
+		{
+			newColor = nightSun;
+		}
+
 		return newColor;
 	}
 }
