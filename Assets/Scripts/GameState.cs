@@ -91,7 +91,7 @@ public class GameState : MonoBehaviour {
 		Cursor.visible = true;
 
 		// new record!
-		if (todaysBest > bestDistance) {
+		if ((int)todaysBest > (int)bestDistance) {
 			gameState.newRecord.SetActive(true);
 			bestDistance = todaysBest;
 		}
@@ -145,11 +145,12 @@ public class GameState : MonoBehaviour {
 	}
 
 	public static void EarnKarma() {
-		karma += (int) (todaysBest / 2f);
+		karma += (int) Mathf.Max(1f, todaysBest / 2f);
 	}
 
 	public void UpgradeMenu(bool open) {
 		if (open) {
+			gameState.newRecord.SetActive(false);
 			gameState.upgradeScreen.SetActive(true);
 			gameState.nightScreen.SetActive(false);
 		} else {
@@ -160,6 +161,7 @@ public class GameState : MonoBehaviour {
 
 	public void DiaryMenu(bool open) {
 		if (open) {
+			gameState.newRecord.SetActive(false);
 			gameState.notif.SetActive(false);
 			gameState.diaryScreen.SetActive(true);
 			gameState.nightScreen.SetActive(false);
