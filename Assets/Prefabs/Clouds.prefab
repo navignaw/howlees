@@ -56,6 +56,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 430058}
+  - 114: {fileID: 11459238}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -114,6 +115,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 430058}
   m_RootOrder: 2
+--- !u!114 &11459238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 185384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa0d9a2df5f3ff46a5fd706c21584a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  loopBound: {x: -1520, y: 1500}
 --- !u!212 &21225852
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -210,7 +224,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: loopBound
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: loopBound.y
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: loopBound.x
+      value: -1520
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185384}
