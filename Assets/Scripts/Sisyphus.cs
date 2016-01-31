@@ -18,7 +18,6 @@ public class Sisyphus : MonoBehaviour {
 
     private Rigidbody rb;
     private Vector3 hillDirection;
-    private Vector3 mouseStart;
     private Vector3 startPos;
     private Vector3 boulderStartPos;
     private Vector3 groundStartPos;
@@ -54,7 +53,6 @@ public class Sisyphus : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             // start idle push animation
             anim.SetTrigger("idlePush");
-            mouseStart = Input.mousePosition;
             rb.constraints |= RigidbodyConstraints.FreezeRotationY;
             rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
         }
@@ -62,22 +60,22 @@ public class Sisyphus : MonoBehaviour {
         // holding mouse button (pushing)
         if (Input.GetMouseButton(0)) {
 
-            Vector3 mouseOffset = Input.mousePosition - mouseStart;
-            Vector3 mouseForce = new Vector3(energy * mouseOffset.x / Screen.width, energy * mouseOffset.y / Screen.height, 0f);
-            rb.velocity = Vector3.Project(mouseForce, transform.forward);
+            Vector2 mouseVelocity = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            if (mouseVelocity.y > 0) {
+                Vector3 mouseForce = new Vector3(energy * mouseVelocity.x, energy * mouseVelocity.y, 0f);
+                rb.velocity = Vector3.Project(mouseForce, transform.forward);
 
-            // Move ground towards camera
-            ground.Translate(Vector3.back * Mathf.Max(mouseForce.y, 0f) * Time.deltaTime * 0.5f);
+                // Move ground towards camera
+                ground.Translate(Vector3.back * Mathf.Max(mouseForce.y, 0f) * Time.deltaTime * 0.5f);
 
-            // Move boulder and player's x position
-            Vector3 pushForce = mouseForce;
-            pushForce *= 20f;
-            pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
-            Debug.Log(pushForce);
-            boulder.transform.RotateAround(boulder.transform.position, Vector3.right, pushForce.y * Time.deltaTime);
+                // Move boulder and player's x position
+                Vector3 pushForce = mouseForce;
+                pushForce *= 20f;
+                pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
+                Debug.Log(pushForce);
+                boulder.transform.RotateAround(boulder.transform.position, Vector3.right, pushForce.y * Time.deltaTime);
 
-            // lose energy while pushing
-            if (mouseOffset.y > moveCursorZone.y) {
+                // lose energy while pushing
                 energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
             }
         } else {

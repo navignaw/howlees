@@ -538,6 +538,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11457156, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: sisyphus
+      value: 
+      objectReference: {fileID: 2022876453}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ff6864257b09a943859af49edd18937, type: 2}
   m_IsPrefabParent: 0
@@ -563,8 +567,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 931484793}
   - 114: {fileID: 931484794}
-  - 114: {fileID: 931484795}
-  - 114: {fileID: 931484796}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -604,35 +606,6 @@ MonoBehaviour:
   gameScreen: {fileID: 878890076}
   defaultCursor: {fileID: 2800000, guid: 5231b8fc52c1437429a828b21b85a39e, type: 3}
   pushCursor: {fileID: 2800000, guid: 93d3cfd05f8dc3e489aadb0e20eb8aad, type: 3}
---- !u!114 &931484795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 931484792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0e52d710a8797544820e7ee1608d60f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sisyphus: {fileID: 2022876453}
-  strengthFormula: {fileID: 931484796}
-  staminaFormula: {fileID: 0}
-  tractionFormula: {fileID: 0}
---- !u!114 &931484796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 931484792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9387d14ce4e714060961dcabe4663a6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Strength Formula
-  Scale: 1
-  Offset: {x: 0, y: 15}
 --- !u!1001 &937855979
 Prefab:
   m_ObjectHideFlags: 0
@@ -925,15 +898,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &1476618400 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 156592, guid: 9ff6864257b09a943859af49edd18937, type: 2}
   m_PrefabInternal: {fileID: 652785538}
---- !u!4 &1498795335 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 469806, guid: 70fdf18115407724fbd4109a0e674141, type: 2}
-  m_PrefabInternal: {fileID: 937855979}
 --- !u!1001 &1871755855
 Prefab:
   m_ObjectHideFlags: 0
@@ -1199,7 +1168,7 @@ Prefab:
     - target: {fileID: 11471992, guid: ced8778792e134f6298c31d7509cfe25, type: 2}
       propertyPath: ground
       value: 
-      objectReference: {fileID: 1498795335}
+      objectReference: {fileID: 695338462}
     - target: {fileID: 11471992, guid: ced8778792e134f6298c31d7509cfe25, type: 2}
       propertyPath: boulder
       value: 
