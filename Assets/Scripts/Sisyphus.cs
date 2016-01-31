@@ -90,7 +90,6 @@ public class Sisyphus : MonoBehaviour {
         // Push if pressing up
         if (verticalSpeed > 0 && canPush) {
             // Move ground towards camera
-            Debug.Log(Mathf.Abs(boulder.transform.position.x - objectTransform.position.x));
             ground.Translate(Vector3.back * energy * Time.deltaTime * 0.25f);
 
             // Rotate boulder and push horizontally
