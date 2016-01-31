@@ -13,9 +13,10 @@ public class UpgradeButton : MonoBehaviour {
     public Text costText;
     public EquationCost costEquation;
     public ButtonType type;
+    public GameObject[] tallies;
 
     private Button button;
-    private int tallies;
+    private int numTallies;
     private int cost;
 
     // Use this for initialization
@@ -30,22 +31,22 @@ public class UpgradeButton : MonoBehaviour {
     public void UpdateCost() {
         switch (type) {
             case ButtonType.AESTHETIC:
-                tallies = Upgrades.aesthetics;
+                numTallies = Upgrades.aesthetics;
                 cost = (int) costEquation.eval(Upgrades.aesthetics);
                 break;
 
             case ButtonType.STRENGTH:
-                tallies = Upgrades.strengthUpgrade;
+                numTallies = Upgrades.strengthUpgrade;
                 cost = (int) costEquation.eval(Upgrades.strengthUpgrade);
                 break;
 
             case ButtonType.STAMINA:
-                tallies = Upgrades.staminaUpgrade;
+                numTallies = Upgrades.staminaUpgrade;
                 cost = (int) costEquation.eval(Upgrades.staminaUpgrade);
                 break;
 
             case ButtonType.TRACTION:
-                tallies = Upgrades.tractionUpgrade;
+                numTallies = Upgrades.tractionUpgrade;
                 cost = (int) costEquation.eval(Upgrades.tractionUpgrade);
                 break;
         }
@@ -56,11 +57,15 @@ public class UpgradeButton : MonoBehaviour {
     }
 
     public void PayCost() {
-        // TODO: play blessed sound effect
         GameState.karma -= cost;
     }
 
     void DrawTallies() {
-        // TODO: draw tallies
+        for (int i = 0; i < Mathf.Min(numTallies, tallies.Length); i++) {
+            tallies[i].SetActive(true);
+        }
+        for (int i = numTallies; i < tallies.Length; i++) {
+            tallies[i].SetActive(false);
+        }
     }
 }
