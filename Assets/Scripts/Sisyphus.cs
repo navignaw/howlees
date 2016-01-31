@@ -14,9 +14,9 @@ public class Sisyphus : MonoBehaviour {
     public float traction = 1f;
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
-    public float horizontalForce = 50f;
     public float maxRollSpeed = 3f;
 
+    const float horizontalForce = 800f;
     const float loseDistance = 4f;
 
     private Rigidbody rb;
@@ -62,11 +62,10 @@ public class Sisyphus : MonoBehaviour {
         // holding mouse button (pushing)
         Vector3 mouseOffset = Input.mousePosition - new Vector3(Screen.width / 2, 0f, 0f);
         if (Input.GetMouseButton(0)) {
-
             Vector2 mouseVelocity = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-            if (mouseVelocity.y > 0) {
-                Vector3 mouseForce = new Vector3(mouseVelocity.x, energy * mouseVelocity.y, 0f);
-                rb.velocity = Vector3.Project(mouseForce, transform.forward);
+            //if (mouseVelocity.y > 0) {
+                Vector3 mouseForce = new Vector3(mouseVelocity.x, energy /* mouseVelocity.y*/, 0f);
+                //rb.velocity = Vector3.Project(mouseForce, transform.forward);
 
                 // Move ground towards camera
                 ground.Translate(Vector3.back * Mathf.Max(mouseForce.y, 0f) * Time.deltaTime * 0.25f);
@@ -74,7 +73,7 @@ public class Sisyphus : MonoBehaviour {
                 // Move boulder and player's x position
                 Vector3 pushForce = mouseForce;
                 boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(energy * pushForce.y * Time.deltaTime, maxRollSpeed));
-                boulder.AddForce(new Vector3(-mouseOffset.x / Screen.width * horizontalForce, 0f, 0f));
+                boulder.AddForce(new Vector3((boulder.transform.position.x - objectTransform.position.x) * horizontalForce, 0f, 0f));
 
                 // lose energy while pushing
                 energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
@@ -87,14 +86,14 @@ public class Sisyphus : MonoBehaviour {
                 } else {
                     anim.SetTrigger("pushForward");
                 }
-            }
+            //}
         } else {
             // not holding mouse button (moving)
             float horizontalSpeed = Time.deltaTime * speed * mouseOffset.x / Screen.width;
-            if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
+            //if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
                 objectTransform.position += new Vector3(horizontalSpeed, 0f, 0f);
-                boulder.AddForce(new Vector3(0f, 5f, 5f)); // move boulder up so it doesn't slide with player
-            }
+                boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
+            //}
 
             ground.Translate(Vector3.forward * traction * Time.deltaTime);
             boulder.transform.RotateAround(boulder.transform.position, Vector3.left, Mathf.Min(traction * 0.25f, maxRollSpeed));

@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Traction Formula
   Scale: -0.05
-  Offset: {x: 0, y: 1}
+  Offset: {x: 0, y: 0.5}
 --- !u!114 &11479024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1792,11 +1792,11 @@ Prefab:
       objectReference: {fileID: 11483746}
     - target: {fileID: 0}
       propertyPath: Offset.y
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Scale
-      value: -0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: staminaFormula
@@ -1917,6 +1917,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Colors.m_PressedColor.g
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

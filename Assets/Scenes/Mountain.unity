@@ -590,19 +590,19 @@ Prefab:
       objectReference: {fileID: 2022876453}
     - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.9607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.9607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.78431374
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_Colors.m_HighlightedColor.a
-      value: 1
+      value: 0.503
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ff6864257b09a943859af49edd18937, type: 2}
@@ -813,7 +813,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: c773eef0bcf25704dbcb211abb7bfdbc, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: c773eef0bcf25704dbcb211abb7bfdbc, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1373,13 +1373,9 @@ Prefab:
       propertyPath: boulder
       value: 
       objectReference: {fileID: 1041361484}
-    - target: {fileID: 6513760, guid: ced8778792e134f6298c31d7509cfe25, type: 2}
-      propertyPath: m_Size.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 11471992, guid: ced8778792e134f6298c31d7509cfe25, type: 2}
-      propertyPath: speed
-      value: 5
+    - target: {fileID: 9561946, guid: ced8778792e134f6298c31d7509cfe25, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ced8778792e134f6298c31d7509cfe25, type: 2}

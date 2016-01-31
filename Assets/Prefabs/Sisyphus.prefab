@@ -701,7 +701,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.2, z: 0.05}
+  m_Size: {x: 0.25, y: 0.2, z: 0.05}
   m_Center: {x: 0, y: 0.1, z: 0.1}
 --- !u!95 &9561946
 Animator:
@@ -739,11 +739,11 @@ MonoBehaviour:
   hillSlope: 10
   maxStrength: 5
   energy: 0
-  speed: 3
+  speed: 4
   traction: 1
   energyDepleteRate: 2
   energyGainRate: 0.5
-  horizontalForce: 100
+  horizontalForce: 1000
   maxRollSpeed: 1
 --- !u!137 &13777342
 SkinnedMeshRenderer:
@@ -830,7 +830,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.x
-      value: 0.05
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.y
@@ -858,7 +858,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: horizontalForce
-      value: 1
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -874,7 +874,7 @@ Prefab:
       objectReference: {fileID: 413402}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: traction
