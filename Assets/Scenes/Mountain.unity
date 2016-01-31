@@ -989,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cost
   Scale: 0.5
+<<<<<<< HEAD
   Offset: {x: 1, y: 0}
 --- !u!1 &443329327
 GameObject:
@@ -1048,6 +1049,9 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+=======
+  Offset: {x: 1, y: 3}
+>>>>>>> origin/master
 --- !u!1 &470208524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cost
   Scale: 0.8
-  Offset: {x: 2, y: 2}
+  Offset: {x: 2, y: 1}
 --- !u!1001 &718475715
 Prefab:
   m_ObjectHideFlags: 0
@@ -1661,6 +1665,7 @@ Prefab:
 --- !u!1001 &732286339
 Prefab:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 695338462}
@@ -1723,6 +1728,8 @@ GameObject:
 --- !u!114 &743622911
 MonoBehaviour:
   m_ObjectHideFlags: 0
+=======
+>>>>>>> origin/master
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743622909}
@@ -1732,12 +1739,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Cost
+<<<<<<< HEAD
   Scale: 1
   Offset: {x: 0, y: 0}
+=======
+  Scale: 0.2
+  Offset: {x: 0, y: 4}
+>>>>>>> origin/master
 --- !u!1 &743883892 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 183174, guid: f81fd5c938f2cde4899e97e0fbe75cc3, type: 2}
   m_PrefabInternal: {fileID: 1221118083}
+<<<<<<< HEAD
 --- !u!1001 &760904616
 Prefab:
   m_ObjectHideFlags: 0
@@ -1854,10 +1867,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bbe17769cac8874d9dc9b0b9dd4012d, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> origin/master
 --- !u!1 &793746464 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 133698, guid: 2e6226072fd60f74980e1636ca262205, type: 2}
   m_PrefabInternal: {fileID: 2138312057}
+<<<<<<< HEAD
 --- !u!1001 &833376907
 Prefab:
   m_ObjectHideFlags: 0
@@ -1900,6 +1916,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60ef4c89ab92d6b4b9ff3b2c14ce0bbf, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> origin/master
 --- !u!114 &870827793 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11454752, guid: 66707fb4687104e68a26e9f124c3fbd1,
