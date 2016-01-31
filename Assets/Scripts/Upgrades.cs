@@ -18,9 +18,8 @@ public class Upgrades : MonoBehaviour {
         UpdateUpgrades();
     }
 
-    // Update is called once per frame
-    void Update () {
-
+    void OnEnable() {
+        UpdateUpgrades();
     }
 
     public void UpdateUpgrades() {
