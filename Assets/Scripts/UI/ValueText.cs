@@ -49,6 +49,7 @@ public class ValueText : MonoBehaviour {
                 break;
         };
 
+        if (!text) text = GetComponent<Text>();
         text.text = prefix + value + suffix;
     }
 

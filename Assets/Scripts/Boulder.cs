@@ -20,7 +20,7 @@ public class Boulder : MonoBehaviour {
 	void Update () {
 		boulderSpeed = sisyphus.boulderSpeed;
 		rockSpeed = GetComponent<Rigidbody>().velocity.magnitude + boulderSpeed;
-		print (sisyphus.boulderSpeed);
+		//print (sisyphus.boulderSpeed);
 		if (wasRolling)
 		{
 			rockSpeed += 2;

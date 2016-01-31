@@ -739,12 +739,12 @@ MonoBehaviour:
   hillSlope: 10
   maxStrength: 5
   energy: 0
-  speed: 4
+  speed: 3
   traction: 1
   energyDepleteRate: 2
   energyGainRate: 0.5
-  horizontalForce: 1000
   maxRollSpeed: 1
+  boulderSpeed: 0
 --- !u!137 &13777342
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -874,7 +874,7 @@ Prefab:
       objectReference: {fileID: 413402}
     - target: {fileID: 0}
       propertyPath: speed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: traction

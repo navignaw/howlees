@@ -66,60 +66,49 @@ public class Sisyphus : MonoBehaviour {
         }
 
         // click start
-        if (Input.GetMouseButtonDown(0)) {
+        /*if (Input.GetMouseButtonDown(0)) {
             // start idle push animation
             anim.SetTrigger("idlePush");
-            rb.constraints |= RigidbodyConstraints.FreezePositionX;
-        }
+        }*/
 
-        // holding mouse button (pushing)
-        Vector3 mouseOffset = Input.mousePosition - new Vector3(Screen.width / 2, 0f, 0f);
-        if (Input.GetMouseButton(0)) {
-            Vector2 mouseVelocity = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-            //if (mouseVelocity.y > 0) {
-                Vector3 mouseForce = new Vector3(mouseVelocity.x, energy /* mouseVelocity.y*/, 0f);
-                //rb.velocity = Vector3.Project(mouseForce, transform.forward);
+        float horizontalSpeed = Input.GetAxis("Horizontal");
+        float verticalSpeed = Input.GetAxis("Vertical");
+        // Push if pressing up
+        if (verticalSpeed > 0) {
+            // Move ground towards camera
+            ground.Translate(Vector3.back * energy * Time.deltaTime * 0.25f);
 
-                // Move ground towards camera
-                ground.Translate(Vector3.back * Mathf.Max(mouseForce.y, 0f) * Time.deltaTime * 0.25f);
+            // Rotate boulder and push horizontally
+            boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(energy * energy * Time.deltaTime, maxRollSpeed));
+            boulder.AddForce(new Vector3((boulder.transform.position.x - objectTransform.position.x) * horizontalForce, 0f, 0f));
 
-                // Move boulder and player's x position
-                Vector3 pushForce = mouseForce;
-                boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(energy * pushForce.y * Time.deltaTime, maxRollSpeed));
-                boulder.AddForce(new Vector3((boulder.transform.position.x - objectTransform.position.x) * horizontalForce, 0f, 0f));
+            // lose energy while pushing
+            energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
 
-                // lose energy while pushing
-                energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
-
-                // TODO: FIX THIS
-                if (mouseVelocity.x > 0.5f) {
-                    anim.SetTrigger("pushRight");
-                } else if (mouseVelocity.x < -0.5f) {
-                    anim.SetTrigger("pushLeft");
-                } else {
-                    anim.SetTrigger("pushForward");
-                }
-            //}
+            // TODO: FIX THIS
+            if (horizontalSpeed > 0.1f) {
+                anim.SetTrigger("pushRight");
+            } else if (horizontalSpeed < -0.1f) {
+                anim.SetTrigger("pushLeft");
+            } else {
+                anim.SetTrigger("pushForward");
+            }
         } else {
-            // not holding mouse button (moving)
-            float horizontalSpeed = Time.deltaTime * speed * mouseOffset.x / Screen.width;
-            //if (Mathf.Abs(mouseOffset.x) > moveCursorZone.x) {
-                objectTransform.position += new Vector3(horizontalSpeed, 0f, 0f);
-                boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
-            //}
-
             ground.Translate(Vector3.forward * traction * Time.deltaTime);
             boulder.transform.RotateAround(boulder.transform.position, Vector3.left, Mathf.Min(traction * 0.25f, maxRollSpeed));
             energy = Mathf.Min(maxStrength, energy + energyGainRate * Time.deltaTime);
         }
 
-        if (Input.GetMouseButtonUp(0)) {
+        if (horizontalSpeed != 0) {
+            horizontalSpeed *= Time.deltaTime * speed;
+            objectTransform.position += new Vector3(horizontalSpeed, 0f, 0f);
+            boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
+        }
+
+        /*if (Input.GetMouseButtonUp(0)) {
             // start idle rest animation
             anim.SetTrigger("idleRest");
-
-            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-            rb.velocity = Vector3.zero;
-        }
+        }*/
 
         // Check boulder distance
         GameState.todaysBest = Mathf.Max(GameState.todaysBest, groundStartPos.z - ground.position.z);
