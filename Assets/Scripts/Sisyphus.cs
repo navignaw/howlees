@@ -12,7 +12,8 @@ public class Sisyphus : MonoBehaviour {
     public float speed = 1f;
     public float energyDepleteRate = 2f;
     public float energyGainRate = 0.5f;
-    public float maxHorizontalForce = 1f;
+    public float horizontalForce = 50f;
+    public float maxRollSpeed = 1f;
 
     const float loseDistance = 1f;
 
@@ -53,8 +54,7 @@ public class Sisyphus : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             // start idle push animation
             anim.SetTrigger("idlePush");
-            rb.constraints |= RigidbodyConstraints.FreezeRotationY;
-            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+            rb.constraints |= RigidbodyConstraints.FreezePositionX;
         }
 
         // holding mouse button (pushing)
@@ -62,7 +62,7 @@ public class Sisyphus : MonoBehaviour {
 
             Vector2 mouseVelocity = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             if (mouseVelocity.y > 0) {
-                Vector3 mouseForce = new Vector3(energy * mouseVelocity.x, energy * mouseVelocity.y, 0f);
+                Vector3 mouseForce = new Vector3(mouseVelocity.x, energy * mouseVelocity.y, 0f);
                 rb.velocity = Vector3.Project(mouseForce, transform.forward);
 
                 // Move ground towards camera
@@ -70,13 +70,20 @@ public class Sisyphus : MonoBehaviour {
 
                 // Move boulder and player's x position
                 Vector3 pushForce = mouseForce;
-                pushForce *= 20f;
-                pushForce.x = Mathf.Clamp(-mouseForce.x, -maxHorizontalForce, maxHorizontalForce);
-                Debug.Log(pushForce);
-                boulder.transform.RotateAround(boulder.transform.position, Vector3.right, pushForce.y * Time.deltaTime);
+                boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(energy * pushForce.y * Time.deltaTime, maxRollSpeed));
+                boulder.AddForce(new Vector3(pushForce.x * horizontalForce, 0f, 0f));
 
                 // lose energy while pushing
                 energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
+
+                // TODO: FIX THIS
+                if (mouseVelocity.x > 0.5f) {
+                    anim.SetTrigger("pushRight");
+                } else if (mouseVelocity.x < -0.5f) {
+                    anim.SetTrigger("pushLeft");
+                } else {
+                    anim.SetTrigger("pushForward");
+                }
             }
         } else {
             // not holding mouse button (moving)
@@ -93,15 +100,13 @@ public class Sisyphus : MonoBehaviour {
             // start idle rest animation
             anim.SetTrigger("idleRest");
 
-            rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
-            rb.constraints |= RigidbodyConstraints.FreezePositionX;
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionX;
             rb.velocity = Vector3.zero;
         }
 
         // Check boulder distance
-        if (boulder.transform.position.z > transform.position.z) {
-            GameState.bestDistance = Mathf.Max(GameState.bestDistance, groundStartPos.z - ground.position.z);
-        } else if ((boulder.transform.position - transform.position).sqrMagnitude >= loseDistance) {
+        GameState.bestDistance = Mathf.Max(GameState.bestDistance, groundStartPos.z - ground.position.z);
+        if ((boulder.transform.position.z - transform.position.z) < loseDistance) {
 			GameState.TurnNight();
             SetPlayable(false);
         }

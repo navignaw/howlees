@@ -17,9 +17,8 @@ public class UpgradeButton : MonoBehaviour {
     private int cost;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         button = GetComponent<Button>();
-        UpdateCost();
     }
 
     // Update is called once per frame
