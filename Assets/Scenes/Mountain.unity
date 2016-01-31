@@ -768,10 +768,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 246281685}
     m_Modifications:
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.size
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 22498270, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -844,52 +840,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400098, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
+    - target: {fileID: 11481136, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     - target: {fileID: 11447080, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[1].entryText
-      value: I saw some birds today and heard the world for the first time. It was
-        nice.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[2].entryText
-      value: "Today, the sky was filled with colors I\u2019d long forgotten. They
-        reminded me of another life."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[3].entryText
-      value: Flowers bloomed. Their smells were sweet and overpowering.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[4].entryText
-      value: Fireflies came to greet us.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[0].entryText
-      value: "Life ain\u2019t so bad down here. Pushing a boulder is good exercise,
-        and the rocks and mountains keep me company."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[5].entryText
-      value: "I think this color is green. Life and nature, it\u2019s all coming back
-        to me."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[6].entryText
-      value: "Tonight, I think fireflies got caught in the sky. I can\u2019t help
-        them\u2026"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11456586, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: diaryEntries.Array.data[7].entryText
-      value: Today I travelled farther than ever, but the mountain stretches on. No
-        matter, I can go on forever.
-      objectReference: {fileID: 0}
-    - target: {fileID: 11481136, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PrevIndex
-      objectReference: {fileID: 0}
+    - target: {fileID: 11447080, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00fa46e48a71eea4db112c5ac978d047, type: 2}
   m_IsPrefabParent: 0
@@ -1096,10 +1062,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 246281685}
     m_Modifications:
-    - target: {fileID: 11457156, guid: 9ff6864257b09a943859af49edd18937, type: 2}
-      propertyPath: aestheticObjects.Array.size
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 22412970, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1172,10 +1134,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11474708, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
+    - target: {fileID: 11425166, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
+    - target: {fileID: 11448582, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     - target: {fileID: 11435736, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
+    - target: {fileID: 11435736, guid: 9ff6864257b09a943859af49edd18937, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     - target: {fileID: 11457156, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: sisyphus
       value: 
@@ -1208,10 +1186,6 @@ Prefab:
       propertyPath: aestheticObjects.Array.data[5]
       value: 
       objectReference: {fileID: 743883892}
-    - target: {fileID: 156592, guid: 9ff6864257b09a943859af49edd18937, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 11457156, guid: 9ff6864257b09a943859af49edd18937, type: 2}
       propertyPath: aestheticObjects.Array.data[6]
       value: 
@@ -2555,58 +2529,30 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 931484794}
-    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 931484794}
     - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 931484794}
     - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 11454794, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.78431374
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.78431374
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 931484794}
     - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 11496088, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.78431374
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.78431374
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 931484794}
     - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.78431374
-      objectReference: {fileID: 0}
-    - target: {fileID: 11432526, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.78431374
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 470208527}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41551e6d98f6c914a9844fbc10cab254, type: 2}
   m_IsPrefabParent: 0
