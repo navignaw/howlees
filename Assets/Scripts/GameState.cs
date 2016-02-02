@@ -52,7 +52,6 @@ public class GameState : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 		time = morning;
 		NextDay();
-		Cursor.SetCursor(defaultCursor, new Vector2(defaultCursor.width/4,0), CursorMode.Auto);
 	}
 
 	// Update is called once per frame

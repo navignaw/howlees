@@ -95,7 +95,6 @@ GameObject:
   - 224: {fileID: 75005628}
   - 222: {fileID: 75005630}
   - 114: {fileID: 75005629}
-  - 114: {fileID: 75005631}
   m_Layer: 5
   m_Name: Title Image
   m_TagString: Untagged
@@ -153,17 +152,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75005627}
---- !u!114 &75005631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 75005627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c61a5ceedca64000bf0461a00ecee3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &438114898
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,15 +515,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75005631}
-        m_MethodName: TitleGame
-        m_Mode: 1
+      - m_Target: {fileID: 1948300490}
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -585,7 +573,6 @@ GameObject:
   - 92: {fileID: 1822130361}
   - 124: {fileID: 1822130360}
   - 81: {fileID: 1822130359}
-  - 114: {fileID: 1822130364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -660,17 +647,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1822130364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1822130358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dfa42eeeda9f4d5883538d850bb76f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1948300489
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +657,7 @@ GameObject:
   - 4: {fileID: 1948300491}
   - 114: {fileID: 1948300490}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b795ddb14c07d478e489388584ff38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escapeSceneChange: -1
 --- !u!4 &1948300491
 Transform:
   m_ObjectHideFlags: 0
