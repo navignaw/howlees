@@ -31,7 +31,8 @@ public class Sisyphus : MonoBehaviour {
     private bool active = false;
     private float playStart;
     private bool delayOver;
-    private bool pushing;
+    private bool pushing = false;
+    private int moving = 0; // -1 for left, 1 for right
 
 
     void Awake () {
@@ -85,6 +86,9 @@ public class Sisyphus : MonoBehaviour {
         } else if (pushing) {
             anim.SetTrigger("idleRest");
             pushing = false;
+        } else if (horizontalSpeed == 0 && moving != 0) {
+            anim.SetTrigger("idleRest");
+            moving = 0;
         }
 
         // Push if pressing up
@@ -106,17 +110,19 @@ public class Sisyphus : MonoBehaviour {
         }
 
         if (horizontalSpeed != 0) {
-            if (verticalSpeed == 0 && horizontalSpeed > 0) {
+            if (verticalSpeed == 0 && horizontalSpeed > 0 && moving != 1) {
                 anim.SetTrigger("right");
-            } else if (verticalSpeed == 0 && horizontalSpeed < 0) {
+                moving = 1;
+            } else if (verticalSpeed == 0 && horizontalSpeed < 0 && moving != -1) {
                 anim.SetTrigger("left");
+                moving = -1;
             }
             horizontalSpeed *= Time.deltaTime * speed;
             Vector3 newPos = objectTransform.position;
             newPos.x = Mathf.Clamp(newPos.x + horizontalSpeed, startTransPos.x + moveBounds.x, startTransPos.x + moveBounds.y);
             objectTransform.position = newPos;
             boulder.AddForce(new Vector3(-horizontalSpeed, 15f, 100f)); // move boulder up so it doesn't slide with player
-        } else if (Mathf.Abs(boulder.velocity.x) < 0.5f) {
+        } else if (Mathf.Abs(boulder.velocity.x) < 0.5f && ground.transform.position.z < groundStartPos.z) {
             boulder.AddForce(new Vector3(Random.Range(-60f, 60f) * 50f, 0f, 0f)); // randomly deviate from center
         }
         // stopped moving this frame
@@ -124,9 +130,7 @@ public class Sisyphus : MonoBehaviour {
         // Check boulder distance
         GameState.todaysBest = Mathf.Max(GameState.todaysBest, groundStartPos.z - ground.position.z);
         if (energy == 0 || (boulderStartPos.z - boulder.transform.position.z) >= loseDistance) {
-            anim.SetTrigger("sit");
 			GameState.TurnNight();
-            SetPlayable(false);
         }
     }
 
@@ -138,15 +142,18 @@ public class Sisyphus : MonoBehaviour {
             objectTransform.position = startTransPos;
             boulder.transform.position = boulderStartPos;
             ground.position = groundStartPos;
-            StopRigidbody(rb);
             StopRigidbody(boulder);
             rb.WakeUp();
             boulder.WakeUp();
             energy = maxStrength;
+            playStart = Time.time;
+            delayOver = false;
+            pushing = false;
+            moving = 0;
+        } else if (!playable) {
+            StopRigidbody(rb);
+            anim.SetTrigger("sit");
         }
-        playStart = Time.time;
-        delayOver = false;
-        pushing = false;
         active = playable;
     }
 

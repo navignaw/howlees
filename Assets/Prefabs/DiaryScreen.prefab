@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &120980
 GameObject:
   m_ObjectHideFlags: 1
@@ -494,11 +494,11 @@ MonoBehaviour:
     entryText: "Life ain\u2019t so bad down here. Pushing a boulder is good exercise,
       and the rocks and mountains keep me company."
   - day: 0
-    entryText: I saw some birds today and heard the world for the first time. It was
-      nice.
+    entryText: "Today, the sky was filled with colors and sounds I\u2019d long forgotten.
+      It reminded me of another life."
   - day: 0
-    entryText: "Today, the sky was filled with colors I\u2019d long forgotten. They
-      reminded me of another life."
+    entryText: I saw some birds today, floating without a care in the sky. How I long
+      for their freedom...
   - day: 0
     entryText: Flowers bloomed. Their smells were sweet and overpowering.
   - day: 0

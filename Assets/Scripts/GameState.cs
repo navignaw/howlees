@@ -92,6 +92,8 @@ public class GameState : MonoBehaviour {
 	static public void TurnNight ()
 	{
 		Init();
+		gameState.sisyphus.SetPlayable(false);
+		gameState.boulder.SetPlayable(false);
 		Cursor.visible = true;
 
 		// new record!
@@ -139,8 +141,6 @@ public class GameState : MonoBehaviour {
 
 	static void Init()
 	{
-		gameState.sisyphus.SetPlayable(false);
-		gameState.boulder.SetPlayable(false);
 		gameState.upgradeScreen.SetActive(false);
 		gameState.diaryScreen.SetActive(false);
 		gameState.nightScreen.SetActive(false);

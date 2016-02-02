@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 483834}
   - 212: {fileID: 21276546}
   - 95: {fileID: 9503838}
+  - 114: {fileID: 11453820}
   - 114: {fileID: 11495398}
   m_Layer: 0
   m_Name: Bird
@@ -47,6 +48,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11453820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc765fcf2f82a2943a81b7958b7ccf5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastFrame: 17
 --- !u!114 &11495398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +124,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lastFrame
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
