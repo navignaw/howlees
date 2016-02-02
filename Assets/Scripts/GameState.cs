@@ -23,7 +23,7 @@ public class GameState : MonoBehaviour {
 	public static float night = 270;
 	public static float midnight = 0;
 
-	static float dayTimeScale = 5;
+	static float dayTimeScale = 10;
 	static float nightTimeScale = 50;
 	static float timeScale = 10;
 
@@ -75,11 +75,10 @@ public class GameState : MonoBehaviour {
 				break;
 			case State.DAY:
 			{
-				time += timeScale * Time.deltaTime;
 				if (time < morning)
 					time += nightTimeScale * Time.deltaTime;
-				if (time >= night)
-					TurnNight();
+				else
+					time += timeScale * Time.deltaTime;
 			}
 				break;
 			case State.DIARY:
