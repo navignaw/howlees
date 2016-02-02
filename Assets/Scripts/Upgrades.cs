@@ -29,16 +29,16 @@ public class Upgrades : MonoBehaviour {
 #if UNITY_EDITOR
         // Cheat for getting karma
         if (Input.GetKeyDown("k")) {
-            GameState.karma = 1000;
+            GameState.karma = 99999;
             UpdateUpgrades();
         }
 #endif
     }
 
     public void UpdateUpgrades() {
-        sisyphus.maxStrength = strengthFormula.eval(strengthUpgrade);
-        sisyphus.energyGainRate = staminaFormula.eval(staminaUpgrade);
-        sisyphus.traction = tractionFormula.eval(tractionUpgrade);
+        sisyphus.strength = strengthFormula.eval(strengthUpgrade);
+        sisyphus.maxEnergy = staminaFormula.eval(staminaUpgrade);
+        //sisyphus.traction = tractionFormula.eval(tractionUpgrade);
 
         foreach (UpgradeButton button in GetComponentsInChildren<UpgradeButton>()) {
             button.UpdateCost();

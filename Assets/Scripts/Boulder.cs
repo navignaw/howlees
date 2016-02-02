@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Boulder : MonoBehaviour {
 
-	AudioSource audio;
+	AudioSource audioSource;
 	float rockSpeed;
 	float boulderSpeed;
 	float curPitch;
@@ -22,7 +22,7 @@ public class Boulder : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
-		audio = GetComponent<AudioSource>();
+		audioSource = GetComponent<AudioSource>();
 		startRot = trail.transform.rotation;
 		prevTrailTime = 0;
 	}
@@ -51,7 +51,7 @@ public class Boulder : MonoBehaviour {
 			wasRolling = false;
 		}
 		curPitch = Mathf.Lerp(curPitch, Mathf.Clamp(rockSpeed, 0, 4), 0.4f);
-		audio.volume = curPitch / 2;
+		audioSource.volume = curPitch / 2;
 	}
 
 	public void SetPlayable(bool playable) {

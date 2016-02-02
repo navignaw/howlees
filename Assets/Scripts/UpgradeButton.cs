@@ -54,7 +54,7 @@ public class UpgradeButton : MonoBehaviour {
         }
         if (!button) button = GetComponent<Button>();
         button.interactable = GameState.karma >= cost && numTallies < maxUpgrades;
-        costText.text = numTallies < maxUpgrades ? cost.ToString() : "-";
+        costText.text = numTallies < maxUpgrades ? cost.ToString() : "MAX";
         DrawTallies();
     }
 

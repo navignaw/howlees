@@ -14,7 +14,7 @@ public class EnergyBar : MonoBehaviour {
 
     void Update () {
         Vector2 newSize = rectTransform.sizeDelta;
-        newSize.y = (sisyphus.energy / sisyphus.maxStrength) * maxHeight;
+        newSize.y = (sisyphus.energy / sisyphus.maxEnergy) * maxHeight;
         rectTransform.sizeDelta = newSize;
     }
 

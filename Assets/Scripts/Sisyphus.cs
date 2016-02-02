@@ -7,16 +7,17 @@ public class Sisyphus : MonoBehaviour {
     public Transform objectTransform;
     public Vector2 moveBounds; // how far player can move horizontally from starting pos
     public float hillSlope;
-    public float maxStrength = 10f;
+    public float maxEnergy = 10f;
+    public float strength = 10f;
     public float energy;
     public float speed = 1f;
     public float traction = 1f;
-    public float energyDepleteRate = 2f;
-    public float energyGainRate = 0.5f;
-    public float horizontalForce = 50f;
-    public float maxRollSpeed = 50f;
     public float boulderSpeed;
 
+    const float horizontalForce = 50f;
+    const float maxRollSpeed = 1f;
+    const float energyDepleteRate = 2f;
+    const float energyGainRate = 0.05f;
     const float loseDistance = 4f;
 
     private Rigidbody rb;
@@ -51,7 +52,7 @@ public class Sisyphus : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        energy = maxStrength;
+        energy = maxEnergy;
     }
 
     // Update is called once per frame
@@ -93,20 +94,22 @@ public class Sisyphus : MonoBehaviour {
 
         // Push if pressing up
         if (verticalSpeed > 0 && canPush) {
+            float pushStrength = strength * energy / maxEnergy;
+
             // Move ground towards camera
-            ground.Translate(Vector3.back * energy * Time.deltaTime * 0.25f);
+            ground.Translate(Vector3.back * pushStrength * Time.deltaTime * 0.25f);
 
             // Rotate boulder and push horizontally
-            boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(energy * energy * Time.deltaTime, maxRollSpeed));
+            boulder.transform.RotateAround(boulder.transform.position, Vector3.right, Mathf.Min(pushStrength * Time.deltaTime, maxRollSpeed));
             boulder.AddForce(new Vector3((boulder.transform.position.x - objectTransform.position.x) * horizontalForce, 0f, 0f));
 
             // lose energy while pushing
-            energy = Mathf.Max(0f, energy - Mathf.Max(energyDepleteRate, 0.1f) * Time.deltaTime);
+            energy = Mathf.Max(0f, energy - energyDepleteRate * Time.deltaTime);
 
         } else {
             ground.Translate(Vector3.forward * traction * Time.deltaTime);
             boulder.transform.RotateAround(boulder.transform.position, Vector3.left, Mathf.Min(traction * 0.25f, maxRollSpeed));
-            energy = Mathf.Min(maxStrength, energy + Mathf.Min(energyGainRate, 2f) * Time.deltaTime);
+            energy = Mathf.Min(maxEnergy, energy + Mathf.Min(energyGainRate * maxEnergy, 2f) * Time.deltaTime);
         }
 
         if (horizontalSpeed != 0) {
@@ -145,7 +148,7 @@ public class Sisyphus : MonoBehaviour {
             StopRigidbody(boulder);
             rb.WakeUp();
             boulder.WakeUp();
-            energy = maxStrength;
+            energy = maxEnergy;
             playStart = Time.time;
             delayOver = false;
             pushing = false;
