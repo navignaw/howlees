@@ -10,7 +10,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Zeus Juicers
-  productName: Sisyphus
+  productName: Sisyphean
   defaultCursor: {fileID: 2800000, guid: 5231b8fc52c1437429a828b21b85a39e, type: 3}
   cursorHotspot: {x: 18, y: 0}
   m_ShowUnitySplashScreen: 1
@@ -333,11 +333,11 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: howlees
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Zeus Juicers
+  metroCertificateIssuer: Zeus Juicers
+  metroCertificateNotAfter: 8012207b907cd201
   metroApplicationDescription: howlees
   wsaImages:
     65636: Assets/Art/Logos/logo_50.png
