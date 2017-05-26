@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class Upgrades : MonoBehaviour {
@@ -8,13 +9,18 @@ public class Upgrades : MonoBehaviour {
     public Equation tractionFormula; // how fast traction grows
 
     public AudioSource music;
-    public GameObject[] aestheticObjects;
 
     public static int aesthetics = 0;
     public static int strengthUpgrade = 0;
     public static int staminaUpgrade = 0;
     public static int tractionUpgrade = 0;
 
+    /**
+     * Delegate and events. A client can subscribe to the event with
+     * Upgrades.Listener += new Upgrades.AestheticHandler(OnAestheticChanged)
+     */
+    public delegate void AestheticHandler(object sender, EventArgs e);
+    public static event AestheticHandler Listener;
 
     // Use this for initialization
     void Start () {
@@ -50,14 +56,15 @@ public class Upgrades : MonoBehaviour {
 
     public void BuyAestheticUpgrade() {
         if (aesthetics == 0) {
-            music.Play();
-        }
-
-        if (aesthetics < aestheticObjects.Length) {
-            aestheticObjects[aesthetics].SetActive(true);
+            music.Play();  // first upgrade includes music!
         }
 
         aesthetics++;
+        // Send message to all listeners, prompting an aesthetic check.
+        if (Listener != null) {
+            Listener(this, EventArgs.Empty);
+        }
+
         UpdateUpgrades();
     }
 
